@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Matched Results | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Form Box */
+      .bdgs-match-box {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        border-top: 5px solid var(--bdgs-t01-mo-primary);
+        margin-bottom: 60px;
+      }
+
+      /* Results Section */
+      .bdgs-match-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s;
+        height: 100%;
+        position: relative;
+        margin-bottom: 30px;
+      }
+      .bdgs-match-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .bdgs-match-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #27ae60;
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 11px;
+        text-transform: uppercase;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+      }
+
+      /* How it Works Icons */
+      .bdgs-feature-icon {
+        width: 70px;
+        height: 70px;
+        background: #eaf4ff;
+        color: var(--bdgs-t01-mo-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin: 0 auto 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.html">
+            <b>Food Spot</b>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+            <li><a href="deals.html">Deals</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >
+                  Add Restaurant
+                </a>
+              </div>
+            </li>
+
+            <li class="visible-xs">
+              <a
+                href="join.html"
+                style="
+                  font-weight: 700;
+                  color: var(--bdgs-t01-mo-primary) !important;
+                "
+              >
+                + Add Restaurant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper" style="background-color: #f4f6f8">
+      <div class="container" style="padding: 60px 0 20px">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="bdgs-match-box">
+              <div class="text-center" style="margin-bottom: 30px">
+                <h1 style="font-weight: 800; margin-top: 0">
+                  Your Match Preferences
+                </h1>
+                <p style="color: #777; font-size: 16px">
+                  We used these details to find your perfect dining spots.
+                </p>
+              </div>
+
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label style="font-weight: 700">Occasion</label>
+                      <select class="form-control" style="height: 50px">
+                        <option selected>Romantic Date</option>
+                        <option>Casual Dinner</option>
+                        <option>Business Lunch</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label style="font-weight: 700">Cuisine</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="Italian"
+                        style="height: 50px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label style="font-weight: 700">Budget</label>
+                      <select class="form-control" style="height: 50px">
+                        <option selected>$25 - $50 (Moderate)</option>
+                        <option>$10 - $25 (Cheap Eats)</option>
+                        <option>$50+ (Fine Dining)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label style="font-weight: 700">Location</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="New York, NY"
+                        style="height: 50px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-block"
+                  style="margin-top: 10px; padding: 15px; font-size: 16px"
+                >
+                  Update Results
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row text-center" style="margin-bottom: 40px">
+          <div class="col-md-12">
+            <span
+              style="
+                background: #2ecc71;
+                color: #fff;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-weight: 700;
+                font-size: 12px;
+                text-transform: uppercase;
+              "
+              >Success!</span
+            >
+            <h2 style="font-weight: 800; margin-top: 15px">
+              We found 3 perfect matches
+            </h2>
+            <p style="color: #777; font-size: 16px">
+              Based on your preferences for <strong>Italian</strong> cuisine in
+              <strong>New York</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="bdgs-match-card">
+              <div
+                style="
+                  height: 200px;
+                  background: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80')
+                    center/cover;
+                "
+              >
+                <span class="bdgs-match-badge"
+                  ><i class="fa fa-star"></i> 98% Match</span
+                >
+              </div>
+              <div style="padding: 25px">
+                <h3 style="margin: 0 0 5px; font-weight: 800">
+                  Luigi's Italian
+                </h3>
+                <p style="color: #777; font-size: 13px; margin-bottom: 15px">
+                  1.2 miles away &bull; $$$
+                </p>
+                <p
+                  style="
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                    color: #555;
+                  "
+                >
+                  "Known for their authentic carbonara and romantic ambiance.
+                  Perfect for dates."
+                </p>
+                <hr />
+                <a
+                  href="member_profile.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-block"
+                  >View Menu & Book</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="bdgs-match-card">
+              <div
+                style="
+                  height: 200px;
+                  background: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80')
+                    center/cover;
+                "
+              >
+                <span class="bdgs-match-badge" style="background: #3498db"
+                  >85% Match</span
+                >
+              </div>
+              <div style="padding: 25px">
+                <h3 style="margin: 0 0 5px; font-weight: 800">
+                  Marco's Pizzeria
+                </h3>
+                <p style="color: #777; font-size: 13px; margin-bottom: 15px">
+                  3.5 miles away &bull; $$
+                </p>
+                <p
+                  style="
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                    color: #555;
+                  "
+                >
+                  "Best wood-fired pizza in the city. Great for casual dining
+                  and groups."
+                </p>
+                <hr />
+                <a
+                  href="member_profile.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline btn-block"
+                  >View Menu & Book</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="bdgs-match-card">
+              <div
+                style="
+                  height: 200px;
+                  background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80')
+                    center/cover;
+                "
+              >
+                <span
+                  class="bdgs-match-badge"
+                  style="background: #f1c40f; color: #333"
+                  >Budget Pick</span
+                >
+              </div>
+              <div style="padding: 25px">
+                <h3 style="margin: 0 0 5px; font-weight: 800">Pasta Express</h3>
+                <p style="color: #777; font-size: 13px; margin-bottom: 15px">
+                  0.5 miles away &bull; $
+                </p>
+                <p
+                  style="
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                    color: #555;
+                  "
+                >
+                  "Quick, delicious pasta bowls. Ideal for a fast and affordable
+                  lunch."
+                </p>
+                <hr />
+                <a
+                  href="member_profile.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline btn-block"
+                  >View Menu & Book</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          background: #fff;
+          padding: 80px 0;
+          border-top: 1px solid #eee;
+          margin-top: 40px;
+        "
+      >
+        <div class="container">
+          <div class="row text-center" style="margin-bottom: 50px">
+            <div class="col-md-12">
+              <h2 style="font-weight: 800">Why use our Matchmaker?</h2>
+              <p class="text-muted">Stop scrolling. Start eating.</p>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-4">
+              <div class="bdgs-feature-icon"><i class="fa fa-magic"></i></div>
+              <h4 style="font-weight: 700">AI Powered</h4>
+              <p style="color: #777; font-size: 14px">
+                Our algorithm learns your taste preferences to suggest spots
+                you'll actually love.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <div class="bdgs-feature-icon">
+                <i class="fa fa-check-circle"></i>
+              </div>
+              <h4 style="font-weight: 700">Verified Reviews</h4>
+              <p style="color: #777; font-size: 14px">
+                We only recommend restaurants with verified positive feedback
+                from locals.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <div class="bdgs-feature-icon"><i class="fa fa-bolt"></i></div>
+              <h4 style="font-weight: 700">Instant Booking</h4>
+              <p style="color: #777; font-size: 14px">
+                Found a match? Book a table or order delivery in just one click.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 80px 0">
+        <div class="row">
+          <div class="col-md-5">
+            <h2 style="font-weight: 800; margin-top: 0">Recent Matches</h2>
+            <p style="color: #777; margin-bottom: 30px">
+              See what other foodies found this week using our tool.
+            </p>
+            <a href="join.html" class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline"
+              >Create Your Profile</a
+            >
+          </div>
+          <div class="col-md-6 col-md-offset-1">
+            <div
+              style="
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                border-left: 4px solid var(--bdgs-t01-mo-primary);
+                margin-bottom: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+              "
+            >
+              <p style="font-style: italic; margin-bottom: 10px; color: #555">
+                "I needed a quiet place for a client meeting. Food Spot matched
+                me with 'The Library Lounge'. It was perfect!"
+              </p>
+              <div style="font-size: 12px; font-weight: 700">
+                — Michael T.
+                <span style="color: #999; font-weight: 400"
+                  >Matched 2 hours ago</span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                border-left: 4px solid #27ae60;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+              "
+            >
+              <p style="font-style: italic; margin-bottom: 10px; color: #555">
+                "Found the best vegan tacos I've ever had. I would never have
+                found this truck without the match tool."
+              </p>
+              <div style="font-size: 12px; font-weight: 700">
+                — Sarah J.
+                <span style="color: #999; font-weight: 400"
+                  >Matched yesterday</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

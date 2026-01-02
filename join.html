@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Food Spot | Partner with Us</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Join Page Specific Styles */
+      .bdgs-pricing-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 40px 30px;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+      .bdgs-pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: var(--bdgs-t01-mo-primary);
+      }
+      .bdgs-pricing-popular {
+        border: 2px solid var(--bdgs-t01-mo-primary);
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+      }
+      .bdgs-badge-popular {
+        background: var(--bdgs-t01-mo-primary);
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        transform: rotate(45deg);
+        width: 120px;
+        font-size: 11px;
+        font-weight: 800;
+        padding: 5px 0;
+        text-transform: uppercase;
+      }
+      .bdgs-price-number {
+        font-size: 48px;
+        font-weight: 800;
+        color: #333;
+        margin: 20px 0;
+        display: block;
+      }
+      .bdgs-features-list {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+        text-align: left;
+      }
+      .bdgs-features-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #f9f9f9;
+        color: #555;
+      }
+      .bdgs-features-list li i {
+        color: #28a745;
+        margin-right: 10px;
+      }
+
+      /* Process Steps */
+      .bdgs-process-step {
+        text-align: center;
+        padding: 20px;
+      }
+      .bdgs-step-icon {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 32px;
+        color: var(--bdgs-t01-mo-primary);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+      }
+      .bdgs-step-line {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background: #eee;
+        z-index: 1;
+        display: none;
+      }
+      @media (min-width: 992px) {
+        .bdgs-step-line {
+          display: block;
+        }
+      }
+
+      /* FAQ Panel */
+      .bdgs-faq-panel {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      .bdgs-faq-heading {
+        padding: 15px 20px;
+        cursor: pointer;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+      }
+      .bdgs-faq-body {
+        padding: 0 20px 20px;
+        border-top: 1px solid #f9f9f9;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default bdgs-t01-mo-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span
+            ><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><b>Food Spot</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Back to Home</a></li>
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div
+        style="
+          background: #2c3e50;
+          padding: 100px 0 140px;
+          color: #fff;
+          text-align: center;
+          position: relative;
+        "
+        class="bdgs-animate-fade"
+      >
+        <div class="container">
+          <h1
+            style="
+              font-weight: 800;
+              font-size: 42px;
+              color: #fff;
+              margin-bottom: 15px;
+            "
+          >
+            Partner with Food Spot
+          </h1>
+          <p
+            style="
+              font-size: 18px;
+              color: rgba(255, 255, 255, 0.8);
+              max-width: 700px;
+              margin: 0 auto 30px;
+            "
+          >
+            Stop paying high commissions. Join 2,500+ restaurants growing their
+            business with verified reviews, direct bookings, and zero fees.
+          </p>
+          <div
+            style="
+              display: inline-block;
+              background: rgba(255, 255, 255, 0.1);
+              padding: 10px 20px;
+              border-radius: 30px;
+              font-size: 13px;
+            "
+          >
+            <i class="fa fa-check-circle" style="color: #2ecc71"></i> Trusted by
+            <strong>Luigi's</strong>, <strong>Osaka Sushi</strong>, and more.
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container"
+        style="margin-top: -80px; position: relative; z-index: 10"
+      >
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              style="
+                background: #fff;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+              "
+            >
+              <div class="row text-center">
+                <div class="col-md-12">
+                  <h3 style="font-weight: 800; margin-bottom: 40px">
+                    How It Works
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 bdgs-process-step">
+                  <div style="position: relative">
+                    <div class="bdgs-step-line"></div>
+                    <div class="bdgs-step-icon">
+                      <i class="fa fa-user-plus"></i>
+                    </div>
+                  </div>
+                  <h4 style="font-weight: 700">1. Create Account</h4>
+                  <p class="text-muted">
+                    Sign up in 2 minutes. No credit card required for the basic
+                    plan.
+                  </p>
+                </div>
+                <div class="col-md-4 bdgs-process-step">
+                  <div style="position: relative">
+                    <div class="bdgs-step-line"></div>
+                    <div class="bdgs-step-icon">
+                      <i class="fa fa-cutlery"></i>
+                    </div>
+                  </div>
+                  <h4 style="font-weight: 700">2. Build Profile</h4>
+                  <p class="text-muted">
+                    Upload your menu, photos, and chef bio to showcase your
+                    brand.
+                  </p>
+                </div>
+                <div class="col-md-4 bdgs-process-step">
+                  <div class="bdgs-step-icon">
+                    <i class="fa fa-line-chart"></i>
+                  </div>
+                  <h4 style="font-weight: 700">3. Get Customers</h4>
+                  <p class="text-muted">
+                    Receive direct bookings and reviews from verified local
+                    foodies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top: 80px; padding-bottom: 60px">
+        <div class="row text-center">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="bdgs-t01-mo-section-title">
+              Simple, Transparent Pricing
+            </h2>
+            <p class="bdgs-t01-mo-section-subtitle">
+              Choose the plan that fits your growth stage.
+            </p>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 bdgs-animate-fade delay-1">
+            <div class="bdgs-pricing-card">
+              <h3 style="margin-top: 0; font-weight: 800">Basic</h3>
+              <p class="text-muted">For new restaurants</p>
+              <div class="bdgs-price-number">
+                $0<span class="bdgs-price-period" style="font-size: 16px"
+                  >/mo</span
+                >
+              </div>
+              <a
+                href="signup.html"
+                class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline btn-block"
+                >Get Started Free</a
+              >
+              <ul class="bdgs-features-list">
+                <li><i class="fa fa-check"></i> Basic Listing Profile</li>
+                <li><i class="fa fa-check"></i> Appear in Search Results</li>
+                <li><i class="fa fa-check"></i> Receive Reviews</li>
+                <li style="color: #ccc">
+                  <i class="fa fa-times" style="color: #eee"></i> Featured Badge
+                </li>
+                <li style="color: #ccc">
+                  <i class="fa fa-times" style="color: #eee"></i> Analytics
+                  Dashboard
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4 bdgs-animate-fade delay-2">
+            <div class="bdgs-pricing-card bdgs-pricing-popular">
+              <div class="bdgs-badge-popular">Popular</div>
+              <h3
+                style="
+                  margin-top: 0;
+                  font-weight: 800;
+                  color: var(--bdgs-t01-mo-primary);
+                "
+              >
+                Featured
+              </h3>
+              <p class="text-muted">For growing businesses</p>
+              <div class="bdgs-price-number">
+                $49<span class="bdgs-price-period" style="font-size: 16px"
+                  >/mo</span
+                >
+              </div>
+              <a
+                href="signup.html"
+                class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-block"
+                >Start 14-Day Free Trial</a
+              >
+              <ul class="bdgs-features-list">
+                <li>
+                  <i class="fa fa-check"></i>
+                  <strong>Everything in Basic</strong>
+                </li>
+                <li>
+                  <i class="fa fa-check"></i>
+                  <strong>Higher Search Ranking</strong>
+                </li>
+                <li><i class="fa fa-check"></i> "Featured" Profile Badge</li>
+                <li><i class="fa fa-check"></i> Post 5 Events/Month</li>
+                <li><i class="fa fa-check"></i> 20 Photo Uploads</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4 bdgs-animate-fade delay-3">
+            <div class="bdgs-pricing-card">
+              <h3 style="margin-top: 0; font-weight: 800">Premium</h3>
+              <p class="text-muted">For elite dining</p>
+              <div class="bdgs-price-number">
+                $149<span class="bdgs-price-period" style="font-size: 16px"
+                  >/mo</span
+                >
+              </div>
+              <a
+                href="signup.html"
+                class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline btn-block"
+                >Contact Sales</a
+              >
+              <ul class="bdgs-features-list">
+                <li>
+                  <i class="fa fa-check"></i>
+                  <strong>Everything in Featured</strong>
+                </li>
+                <li><i class="fa fa-check"></i> Highest Search Visibility</li>
+                <li><i class="fa fa-check"></i> Unlimited Events & Photos</li>
+                <li><i class="fa fa-check"></i> Priority VIP Support</li>
+                <li><i class="fa fa-check"></i> Full Analytics Dashboard</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-bottom: 80px">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 style="font-weight: 800; margin-bottom: 20px">
+              Frequently Asked Questions
+            </h3>
+            <p class="text-muted" style="margin-bottom: 30px">
+              Can't find the answer you're looking for? Reach out to our support
+              team.
+            </p>
+
+            <div class="bdgs-faq-panel">
+              <div
+                class="bdgs-faq-heading"
+                data-toggle="collapse"
+                data-target="#faq1"
+              >
+                Can I cancel my subscription anytime?
+                <i class="fa fa-angle-down"></i>
+              </div>
+              <div id="faq1" class="collapse in bdgs-faq-body">
+                Yes, absolutely. There are no long-term contracts. You can
+                cancel or downgrade your plan at any time from your dashboard.
+              </div>
+            </div>
+
+            <div class="bdgs-faq-panel">
+              <div
+                class="bdgs-faq-heading"
+                data-toggle="collapse"
+                data-target="#faq2"
+              >
+                Do you charge commissions on bookings?
+                <i class="fa fa-angle-down"></i>
+              </div>
+              <div id="faq2" class="collapse bdgs-faq-body">
+                No! Food Spot is a commission-free platform. We only charge for
+                the monthly subscription features. You keep 100% of your
+                revenue.
+              </div>
+            </div>
+
+            <div class="bdgs-faq-panel">
+              <div
+                class="bdgs-faq-heading"
+                data-toggle="collapse"
+                data-target="#faq3"
+              >
+                How does the "Featured" badge work?
+                <i class="fa fa-angle-down"></i>
+              </div>
+              <div id="faq3" class="collapse bdgs-faq-body">
+                Featured members appear at the top of search results and on the
+                homepage carousel, getting up to 3x more views than basic
+                listings.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-md-offset-1 hidden-xs hidden-sm">
+            <div
+              style="background: #f9f9f9; padding: 30px; border-radius: 12px"
+            >
+              <h4 style="font-weight: 800; margin-bottom: 20px">
+                Why Food Spot?
+              </h4>
+              <ul
+                class="list-unstyled"
+                style="line-height: 2.5; font-size: 15px"
+              >
+                <li>
+                  <i
+                    class="fa fa-check-circle"
+                    style="
+                      color: var(--bdgs-t01-mo-primary);
+                      margin-right: 10px;
+                    "
+                  ></i>
+                  Direct link to your website
+                </li>
+                <li>
+                  <i
+                    class="fa fa-check-circle"
+                    style="
+                      color: var(--bdgs-t01-mo-primary);
+                      margin-right: 10px;
+                    "
+                  ></i>
+                  Verified customer reviews
+                </li>
+                <li>
+                  <i
+                    class="fa fa-check-circle"
+                    style="
+                      color: var(--bdgs-t01-mo-primary);
+                      margin-right: 10px;
+                    "
+                  ></i>
+                  SEO optimized profiles
+                </li>
+                <li>
+                  <i
+                    class="fa fa-check-circle"
+                    style="
+                      color: var(--bdgs-t01-mo-primary);
+                      margin-right: 10px;
+                    "
+                  ></i>
+                  Promote your events
+                </li>
+                <li>
+                  <i
+                    class="fa fa-check-circle"
+                    style="
+                      color: var(--bdgs-t01-mo-primary);
+                      margin-right: 10px;
+                    "
+                  ></i>
+                  Mobile-friendly design
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          background: var(--bdgs-t01-mo-primary);
+          padding: 60px 0;
+          text-align: center;
+          color: #fff;
+        "
+      >
+        <div class="container">
+          <h2 style="font-weight: 800; margin-top: 0; color: #fff">
+            Ready to grow your restaurant?
+          </h2>
+          <p
+            style="
+              font-size: 18px;
+              margin-bottom: 30px;
+              color: rgba(255, 255, 255, 0.9);
+            "
+          >
+            Join today and get your first 14 days of Premium features for free.
+          </p>
+          <a
+            href="signup.html"
+            class="bdgs-t01-mo-btn"
+            style="background: #fff; color: var(--bdgs-t01-mo-primary)"
+            >Create Your Account</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

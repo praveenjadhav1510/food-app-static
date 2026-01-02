@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Story | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Unique About Page Styles */
+      .bdgs-about-hero {
+        background-color: #fff;
+        padding: 100px 0;
+        text-align: center;
+      }
+      .bdgs-big-text {
+        font-size: 20px;
+        line-height: 1.8;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* The Manifesto Section */
+      .bdgs-manifesto {
+        background-color: #1a1d20;
+        color: #fff;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .bdgs-manifesto-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .bdgs-manifesto-list li {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+        cursor: default;
+      }
+      .bdgs-manifesto-list li:hover {
+        opacity: 1;
+        color: var(--bdgs-t01-mo-primary);
+        transform: translateX(10px);
+      }
+      .bdgs-manifesto-list li span {
+        font-size: 14px;
+        display: block;
+        font-weight: 400;
+        margin-top: 5px;
+        color: #ccc;
+      }
+
+      /* Value Cards */
+      .bdgs-value-card {
+        border: 1px solid #eee;
+        padding: 40px 30px;
+        border-radius: 12px;
+        background: #fff;
+        min-height: 250px;
+        height: 100%;
+        transition: transform 0.3s;
+      }
+      .bdgs-value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-color: var(--bdgs-t01-mo-primary);
+      }
+      .bdgs-value-icon {
+        font-size: 32px;
+        color: var(--bdgs-t01-mo-primary);
+        margin-bottom: 20px;
+      }
+
+      /* Team Cards */
+      .bdgs-team-card {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .bdgs-team-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover;
+        border: 5px solid #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span
+            ><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><b>Food Spot</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left" style="margin-left: 20px">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                  >Add Restaurant</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div class="bdgs-about-hero bdgs-animate-fade">
+        <div class="container">
+          <span
+            style="
+              color: var(--bdgs-t01-mo-primary);
+              font-weight: 800;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            "
+            >Who We Are</span
+          >
+          <h1
+            style="
+              font-weight: 800;
+              font-size: 48px;
+              margin: 15px 0 30px;
+              letter-spacing: -1px;
+            "
+          >
+            We built a bigger table.
+          </h1>
+          <p class="bdgs-big-text">
+            Food Spot started with a simple frustration: scrolling through
+            thousands of fake reviews just to find a decent slice of pizza. We
+            realized that food isn't about algorithms—it's about connection. So
+            we built a platform that puts chefs, communities, and authentic
+            flavors first.
+          </p>
+        </div>
+      </div>
+
+      <div class="bdgs-manifesto bdgs-animate-fade delay-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <h2
+                style="
+                  font-weight: 800;
+                  color: #fff;
+                  font-size: 36px;
+                  margin-top: 0;
+                "
+              >
+                Our Manifesto
+              </h2>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.7);
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                We aren't just a directory. We are a movement against bland food
+                and bad recommendations. Here is what we stand for.
+              </p>
+              <a
+                href="join.html"
+                class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                style="margin-top: 20px"
+                >Join the Movement</a
+              >
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+              <ul class="bdgs-manifesto-list">
+                <li>
+                  01. Real Food > Fast Food
+                  <span
+                    >We prioritize local, independent restaurants over
+                    chains.</span
+                  >
+                </li>
+                <li>
+                  02. Verification Matters
+                  <span
+                    >Every review on Food Spot comes from a verified
+                    diner.</span
+                  >
+                </li>
+                <li>
+                  03. Support Local
+                  <span
+                    >We take 0% commission on bookings. Your money goes to the
+                    chef.</span
+                  >
+                </li>
+                <li>
+                  04. Community First
+                  <span>Food tastes better when we eat together.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 100px 0">
+        <div
+          class="row"
+          style="display: flex; align-items: center; flex-wrap: wrap"
+        >
+          <div class="col-md-6 bdgs-animate-fade delay-2">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+              style="
+                width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                object-fit: cover;
+              "
+            />
+          </div>
+          <div class="col-md-5 col-md-offset-1 bdgs-animate-fade delay-2">
+            <h3 style="font-weight: 800; font-size: 32px; margin-bottom: 20px">
+              From a Notebook to a Network
+            </h3>
+            <p
+              style="
+                color: #777;
+                font-size: 16px;
+                line-height: 1.7;
+                margin-bottom: 20px;
+              "
+            >
+              In 2023, our founder Alex started keeping a notebook of "hidden
+              gems" in NYC that tourists often missed. Friends started asking
+              for copies. Then friends of friends.
+            </p>
+            <p style="color: #777; font-size: 16px; line-height: 1.7">
+              What began as a Google Doc shared between foodies turned into Food
+              Spot—a dedicated platform for discovering the culinary soul of a
+              city. Today, we operate in 12 cities and support over 2,500 local
+              restaurants.
+            </p>
+            <div
+              style="
+                margin-top: 30px;
+                border-left: 4px solid var(--bdgs-t01-mo-primary);
+                padding-left: 15px;
+              "
+            >
+              <p
+                style="
+                  font-style: italic;
+                  font-size: 18px;
+                  color: #333;
+                  margin: 0;
+                "
+              >
+                "We wanted to build the Yelp we actually wanted to use."
+              </p>
+              <small
+                style="color: #999; font-weight: 700; text-transform: uppercase"
+                >— Alex Johnson, Founder</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #f9f9f9; padding: 80px 0">
+        <div class="container">
+          <div class="row text-center" style="margin-bottom: 50px">
+            <div class="col-md-12">
+              <h2 style="font-weight: 800">Why We Are Different</h2>
+              <p class="text-muted">
+                We do things a little differently around here.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 bdgs-animate-fade delay-1">
+              <div class="bdgs-value-card">
+                <i class="fa fa-check-circle-o bdgs-value-icon"></i>
+                <h4 style="font-weight: 700">Verified Reviews Only</h4>
+                <p style="color: #777; font-size: 14px">
+                  No bots. No paid fake reviews. Only people who have actually
+                  dined there can leave feedback.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bdgs-animate-fade delay-2">
+              <div class="bdgs-value-card">
+                <i class="fa fa-handshake-o bdgs-value-icon"></i>
+                <h4 style="font-weight: 700">Zero Commission</h4>
+                <p style="color: #777; font-size: 14px">
+                  We don't charge restaurants per booking. We believe in fair,
+                  transparent flat pricing.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 bdgs-animate-fade delay-3">
+              <div class="bdgs-value-card">
+                <i class="fa fa-heart-o bdgs-value-icon"></i>
+                <h4 style="font-weight: 700">Curated Content</h4>
+                <p style="color: #777; font-size: 14px">
+                  Our "Food Guides" are written by professional food critics and
+                  local experts, not algorithms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 80px 0">
+        <div class="row text-center" style="margin-bottom: 50px">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 style="font-weight: 800">Meet the Creators</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-md-3 col-sm-6 bdgs-team-card bdgs-animate-fade delay-1"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              class="bdgs-team-img"
+            />
+            <h4 style="font-weight: 700; margin-bottom: 5px">Alex Johnson</h4>
+            <p style="color: #777; font-size: 13px; text-transform: uppercase">
+              Founder & CEO
+            </p>
+            <a href="#" style="color: #ccc"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div
+            class="col-md-3 col-sm-6 bdgs-team-card bdgs-animate-fade delay-2"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/65.jpg"
+              class="bdgs-team-img"
+            />
+            <h4 style="font-weight: 700; margin-bottom: 5px">Sarah Miller</h4>
+            <p style="color: #777; font-size: 13px; text-transform: uppercase">
+              Head of Content
+            </p>
+            <a href="#" style="color: #ccc"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div
+            class="col-md-3 col-sm-6 bdgs-team-card bdgs-animate-fade delay-3"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/85.jpg"
+              class="bdgs-team-img"
+            />
+            <h4 style="font-weight: 700; margin-bottom: 5px">David Kim</h4>
+            <p style="color: #777; font-size: 13px; text-transform: uppercase">
+              Head of Engineering
+            </p>
+            <a href="#" style="color: #ccc"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div
+            class="col-md-3 col-sm-6 bdgs-team-card bdgs-animate-fade delay-4"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              class="bdgs-team-img"
+            />
+            <h4 style="font-weight: 700; margin-bottom: 5px">Emily Chen</h4>
+            <p style="color: #777; font-size: 13px; text-transform: uppercase">
+              Marketing Director
+            </p>
+            <a href="#" style="color: #ccc"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

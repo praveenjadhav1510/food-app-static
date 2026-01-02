@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Guides & Blog | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Blog Specific Polish */
+      .bdgs-tag-cloud a {
+        display: inline-block;
+        background: #f1f3f5;
+        color: #555;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-bottom: 8px;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .bdgs-tag-cloud a:hover {
+        background: var(--bdgs-t01-mo-primary);
+        color: #fff;
+      }
+      .bdgs-sidebar-title {
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+      }
+      .bdgs-newsletter-box {
+        background: #fdfdfd;
+        border: 2px dashed #eee;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.html">
+            <b>Food Spot</b>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left" style="margin-left: 20px">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li>
+              <a
+                href="blog_listing.html"
+                style="color: var(--bdgs-t01-mo-primary) !important"
+                >Food Guides</a
+              >
+            </li>
+            <li><a href="deals.html">Deals</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >
+                  Add Restaurant
+                </a>
+              </div>
+            </li>
+
+            <li class="visible-xs">
+              <a
+                href="join.html"
+                style="
+                  font-weight: 700;
+                  color: var(--bdgs-t01-mo-primary) !important;
+                "
+              >
+                + Add Restaurant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div
+        style="
+          background: #fff;
+          border-bottom: 1px solid #eee;
+          margin-bottom: 60px;
+        "
+        class="bdgs-animate-fade"
+      >
+        <div class="container">
+          <div
+            class="row"
+            style="display: flex; align-items: center; min-height: 450px"
+          >
+            <div class="col-md-6" style="padding: 40px 0">
+              <span
+                style="
+                  color: var(--bdgs-t01-mo-primary);
+                  font-weight: 800;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 12px;
+                "
+              >
+                <i class="fa fa-star"></i> Featured Story
+              </span>
+              <h1
+                style="
+                  font-size: 42px;
+                  margin-top: 15px;
+                  margin-bottom: 20px;
+                  line-height: 1.2;
+                  font-weight: 800;
+                "
+              >
+                The Best Brunch Spots in NYC for 2025
+              </h1>
+              <p
+                style="
+                  font-size: 18px;
+                  color: #777;
+                  margin-bottom: 30px;
+                  line-height: 1.6;
+                "
+              >
+                Join us as we explore 10 amazing brunch destinations across
+                Manhattan and Brooklyn, from classic eggs benedict to bottomless
+                mimosas.
+              </p>
+
+              <div
+                style="display: flex; align-items: center; margin-bottom: 30px"
+              >
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin-right: 12px;
+                  "
+                />
+                <div style="line-height: 1.2">
+                  <strong style="display: block; font-size: 14px"
+                    >Jessica Chen</strong
+                  >
+                  <span style="font-size: 12px; color: #999"
+                    >Dec 1, 2025 &bull; 8 min read</span
+                  >
+                </div>
+              </div>
+
+              <a
+                href="blog_details.html"
+                class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >Read Full Article</a
+              >
+            </div>
+
+            <div class="col-md-6 hidden-xs hidden-sm">
+              <div
+                style="
+                  height: 380px;
+                  background-image: url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=800&q=80');
+                  background-size: cover;
+                  background-position: center;
+                  border-radius: 12px;
+                  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 bdgs-animate-fade delay-1">
+            <div class="bdgs-t01-mo-sidebar-box">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search articles..."
+                  style="
+                    border-radius: 20px 0 0 20px;
+                    border-right: none;
+                    box-shadow: none;
+                  "
+                />
+                <span class="input-group-btn">
+                  <button
+                    class="btn btn-default"
+                    type="button"
+                    style="border-radius: 0 20px 20px 0; border-left: none"
+                  >
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+
+              <div style="margin-top: 40px">
+                <h4 class="bdgs-sidebar-title">Categories</h4>
+                <ul
+                  class="list-unstyled"
+                  style="line-height: 2.5; font-size: 14px"
+                >
+                  <li>
+                    <a href="#" style="color: #555"
+                      >Food Guides
+                      <span
+                        class="pull-right text-muted"
+                        style="
+                          background: #eee;
+                          padding: 2px 8px;
+                          border-radius: 10px;
+                          font-size: 11px;
+                        "
+                        >12</span
+                      ></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" style="color: #555"
+                      >Chef Interviews
+                      <span
+                        class="pull-right text-muted"
+                        style="
+                          background: #eee;
+                          padding: 2px 8px;
+                          border-radius: 10px;
+                          font-size: 11px;
+                        "
+                        >5</span
+                      ></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" style="color: #555"
+                      >Trends
+                      <span
+                        class="pull-right text-muted"
+                        style="
+                          background: #eee;
+                          padding: 2px 8px;
+                          border-radius: 10px;
+                          font-size: 11px;
+                        "
+                        >8</span
+                      ></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" style="color: #555"
+                      >Recipes
+                      <span
+                        class="pull-right text-muted"
+                        style="
+                          background: #eee;
+                          padding: 2px 8px;
+                          border-radius: 10px;
+                          font-size: 11px;
+                        "
+                        >3</span
+                      ></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" style="color: #555"
+                      >City Guides
+                      <span
+                        class="pull-right text-muted"
+                        style="
+                          background: #eee;
+                          padding: 2px 8px;
+                          border-radius: 10px;
+                          font-size: 11px;
+                        "
+                        >6</span
+                      ></a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div style="margin-top: 40px">
+                <h4 class="bdgs-sidebar-title">Trending Tags</h4>
+                <div class="bdgs-tag-cloud">
+                  <a href="#">#Vegan</a>
+                  <a href="#">#Sushi</a>
+                  <a href="#">#NYC</a>
+                  <a href="#">#FineDining</a>
+                  <a href="#">#CheapEats</a>
+                  <a href="#">#Dessert</a>
+                  <a href="#">#Healthy</a>
+                </div>
+              </div>
+
+              <div class="bdgs-newsletter-box" style="margin-top: 40px">
+                <i
+                  class="fa fa-envelope-o"
+                  style="
+                    font-size: 32px;
+                    color: var(--bdgs-t01-mo-primary);
+                    margin-bottom: 10px;
+                  "
+                ></i>
+                <h5 style="font-weight: 700; margin-top: 0">
+                  Weekly Food Digest
+                </h5>
+                <p style="font-size: 12px; color: #777; margin-bottom: 15px">
+                  Get the best restaurants and recipes delivered to your inbox.
+                </p>
+                <input
+                  type="text"
+                  class="form-control input-sm"
+                  placeholder="Your email"
+                  style="margin-bottom: 10px; text-align: center"
+                />
+                <button
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6 bdgs-animate-fade delay-1">
+                <a href="blog_details.html" style="text-decoration: none">
+                  <div class="bdgs-t01-mo-article-card">
+                    <div
+                      class="bdgs-t01-mo-article-img"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80');
+                      "
+                    >
+                      <span class="bdgs-t01-mo-article-tag">Trends</span>
+                    </div>
+                    <div class="bdgs-t01-mo-article-body">
+                      <h3 class="bdgs-t01-mo-article-title">
+                        Hidden Gem Vegan Restaurants
+                      </h3>
+                      <p class="bdgs-t01-mo-article-excerpt">
+                        Plant-based dining is taking over. Here are the most
+                        underrated spots you need to try this month.
+                      </p>
+                      <div class="bdgs-t01-mo-article-meta">
+                        <span style="display: flex; align-items: center">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/65.jpg"
+                            class="bdgs-t01-mo-user-avatar"
+                            style="width: 24px; height: 24px; margin-right: 8px"
+                          />
+                          Sarah M.
+                        </span>
+                        <span>2 days ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 bdgs-animate-fade delay-2">
+                <a href="blog_details.html" style="text-decoration: none">
+                  <div class="bdgs-t01-mo-article-card">
+                    <div
+                      class="bdgs-t01-mo-article-img"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80');
+                      "
+                    >
+                      <span class="bdgs-t01-mo-article-tag">Nightlife</span>
+                    </div>
+                    <div class="bdgs-t01-mo-article-body">
+                      <h3 class="bdgs-t01-mo-article-title">
+                        Top Wine Bars in San Francisco
+                      </h3>
+                      <p class="bdgs-t01-mo-article-excerpt">
+                        Discover the best places to sip vintage reds and crisp
+                        whites in the Bay Area's finest cellars.
+                      </p>
+                      <div class="bdgs-t01-mo-article-meta">
+                        <span style="display: flex; align-items: center">
+                          <img
+                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            class="bdgs-t01-mo-user-avatar"
+                            style="width: 24px; height: 24px; margin-right: 8px"
+                          />
+                          Mike T.
+                        </span>
+                        <span>1 week ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 bdgs-animate-fade delay-3">
+                <a href="blog_details.html" style="text-decoration: none">
+                  <div class="bdgs-t01-mo-article-card">
+                    <div
+                      class="bdgs-t01-mo-article-img"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80');
+                      "
+                    >
+                      <span
+                        class="bdgs-t01-mo-article-tag"
+                        style="color: #d35400"
+                        >Interview</span
+                      >
+                    </div>
+                    <div class="bdgs-t01-mo-article-body">
+                      <h3 class="bdgs-t01-mo-article-title">
+                        Chef Marco on Authentic Italian
+                      </h3>
+                      <p class="bdgs-t01-mo-article-excerpt">
+                        We sat down with James Beard nominee Marco Rossi to
+                        discuss his philosophy on pasta and sauce.
+                      </p>
+                      <div class="bdgs-t01-mo-article-meta">
+                        <span style="display: flex; align-items: center">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/44.jpg"
+                            class="bdgs-t01-mo-user-avatar"
+                            style="width: 24px; height: 24px; margin-right: 8px"
+                          />
+                          Jessica Chen
+                        </span>
+                        <span>5 days ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 bdgs-animate-fade delay-3">
+                <a href="blog_details.html" style="text-decoration: none">
+                  <div class="bdgs-t01-mo-article-card">
+                    <div
+                      class="bdgs-t01-mo-article-img"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80');
+                      "
+                    >
+                      <span
+                        class="bdgs-t01-mo-article-tag"
+                        style="color: #27ae60"
+                        >Recipe</span
+                      >
+                    </div>
+                    <div class="bdgs-t01-mo-article-body">
+                      <h3 class="bdgs-t01-mo-article-title">
+                        15-Minute Spicy Tuna Bowl
+                      </h3>
+                      <p class="bdgs-t01-mo-article-excerpt">
+                        A quick, healthy, and delicious meal you can make at
+                        home when you don't feel like ordering out.
+                      </p>
+                      <div class="bdgs-t01-mo-article-meta">
+                        <span style="display: flex; align-items: center">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/12.jpg"
+                            class="bdgs-t01-mo-user-avatar"
+                            style="width: 24px; height: 24px; margin-right: 8px"
+                          />
+                          Lisa K.
+                        </span>
+                        <span>2 weeks ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 bdgs-animate-fade delay-4">
+                <a href="blog_details.html" style="text-decoration: none">
+                  <div class="bdgs-t01-mo-article-card">
+                    <div
+                      class="bdgs-t01-mo-article-img"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=600&q=80');
+                      "
+                    >
+                      <span class="bdgs-t01-mo-article-tag">Trends</span>
+                    </div>
+                    <div class="bdgs-t01-mo-article-body">
+                      <h3 class="bdgs-t01-mo-article-title">
+                        Food Trends to Watch in 2025
+                      </h3>
+                      <p class="bdgs-t01-mo-article-excerpt">
+                        From sustainable seafood to mushroom coffee, here is
+                        what will be on everyone's plate next year.
+                      </p>
+                      <div class="bdgs-t01-mo-article-meta">
+                        <span style="display: flex; align-items: center">
+                          <img
+                            src="https://randomuser.me/api/portraits/men/85.jpg"
+                            class="bdgs-t01-mo-user-avatar"
+                            style="width: 24px; height: 24px; margin-right: 8px"
+                          />
+                          Food Editor
+                        </span>
+                        <span>3 weeks ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6 bdgs-animate-fade delay-4">
+                <a href="blog_details.html" style="text-decoration: none">
+                  <div class="bdgs-t01-mo-article-card">
+                    <div
+                      class="bdgs-t01-mo-article-img"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80');
+                      "
+                    >
+                      <span
+                        class="bdgs-t01-mo-article-tag"
+                        style="color: #8e44ad"
+                        >Guide</span
+                      >
+                    </div>
+                    <div class="bdgs-t01-mo-article-body">
+                      <h3 class="bdgs-t01-mo-article-title">
+                        NYC's Most Instagrammable Desserts
+                      </h3>
+                      <p class="bdgs-t01-mo-article-excerpt">
+                        Satisfy your sweet tooth with these stunning cakes,
+                        donuts, and pastries found in the city.
+                      </p>
+                      <div class="bdgs-t01-mo-article-meta">
+                        <span style="display: flex; align-items: center">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/22.jpg"
+                            class="bdgs-t01-mo-user-avatar"
+                            style="width: 24px; height: 24px; margin-right: 8px"
+                          />
+                          Amanda R.
+                        </span>
+                        <span>1 month ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="text-center bdgs-animate-fade delay-4"
+              style="margin-top: 20px"
+            >
+              <ul class="pagination">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

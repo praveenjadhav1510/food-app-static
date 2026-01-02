@@ -1,0 +1,233 @@
+/**
+ * Project: Food Spot (BDGS Theme T01-MO)
+ * File: bdgs-t01-mo-auth.css
+ * Description: Specialized styles for Login & Signup pages (Split Layout)
+ */
+
+/* FULL PAGE WRAPPER FOR AUTH */
+.bdgs-auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* LEFT SIDE: IMAGE & TESTIMONIAL */
+.bdgs-auth-visual {
+  flex: 1;
+  background-color: var(--bdgs-t01-mo-secondary);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px;
+  color: #fff;
+}
+
+.bdgs-auth-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(44, 62, 80, 0.3),
+    rgba(44, 62, 80, 0.9)
+  );
+  z-index: 1;
+}
+
+.bdgs-auth-visual-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.bdgs-auth-quote {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bdgs-auth-author {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* RIGHT SIDE: FORM */
+.bdgs-auth-form-container {
+  width: 550px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+  overflow-y: auto; /* Handle tall forms */
+}
+
+.bdgs-auth-header {
+  margin-bottom: 40px;
+}
+
+.bdgs-auth-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--bdgs-t01-mo-primary);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.bdgs-auth-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bdgs-auth-subtitle {
+  color: #777;
+  font-size: 16px;
+}
+
+/* FORM ELEMENTS */
+.bdgs-auth-input-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.bdgs-auth-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.bdgs-auth-input {
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s;
+  background: #fdfdfd;
+}
+
+.bdgs-auth-input:focus {
+  border-color: var(--bdgs-t01-mo-primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+/* SOCIAL LOGIN */
+.bdgs-auth-social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.bdgs-social-btn {
+  flex: 1;
+  height: 50px;
+  border: 2px solid #eee;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.bdgs-social-btn:hover {
+  background: #f9f9f9;
+  border-color: #ddd;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+.bdgs-auth-divider {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.bdgs-auth-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #eee;
+}
+
+.bdgs-auth-divider span {
+  background: #fff;
+  padding: 0 15px;
+  position: relative;
+  color: #999;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ROLE SELECTION (SIGNUP) */
+.bdgs-role-selector {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.bdgs-role-card {
+  flex: 1;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.bdgs-role-card:hover {
+  border-color: var(--bdgs-t01-mo-primary);
+  background: rgba(0, 123, 255, 0.02);
+}
+
+.bdgs-role-card.active {
+  border-color: var(--bdgs-t01-mo-primary);
+  background: rgba(0, 123, 255, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+}
+
+.bdgs-role-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+  .bdgs-auth-visual {
+    display: none;
+  }
+  .bdgs-auth-form-container {
+    width: 100%;
+    padding: 40px 20px;
+  }
+}

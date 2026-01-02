@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luigi's Italian Restaurant | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Profile Page Specific Polish */
+      .bdgs-profile-hero {
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .bdgs-profile-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.7)
+        );
+      }
+      .bdgs-profile-header-content {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        width: 100%;
+        color: #fff;
+      }
+      .bdgs-profile-badge {
+        background: #ffc107;
+        color: #333;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      /* Tabs */
+      .bdgs-nav-tabs {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 30px;
+      }
+      .bdgs-nav-tabs > li > a {
+        color: #777;
+        font-weight: 600;
+        border: none;
+        padding: 15px 20px;
+        font-size: 15px;
+      }
+      .bdgs-nav-tabs > li.active > a,
+      .bdgs-nav-tabs > li.active > a:hover,
+      .bdgs-nav-tabs > li.active > a:focus {
+        color: var(--bdgs-t01-mo-primary);
+        border: none;
+        border-bottom: 3px solid var(--bdgs-t01-mo-primary);
+        background: transparent;
+      }
+
+      /* Gallery Overlay */
+      .bdgs-gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        height: 120px;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+      }
+      .bdgs-gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+      .bdgs-gallery-item:hover .bdgs-gallery-overlay {
+        opacity: 1;
+      }
+
+      /* Menu & Chef */
+      .bdgs-menu-item {
+        border-bottom: 1px dashed #eee;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .bdgs-menu-price {
+        font-weight: 800;
+        color: var(--bdgs-t01-mo-primary);
+        font-size: 16px;
+      }
+      .bdgs-chef-box {
+        background: #f9f9f9;
+        border-radius: 12px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        border: 1px solid #eee;
+      }
+
+      /* Sticky Sidebar & Form */
+      .bdgs-sticky-sidebar {
+        position: sticky;
+        top: 20px;
+      }
+      .bdgs-form-label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 5px;
+      }
+      .bdgs-form-control {
+        border: 1px solid #eee;
+        box-shadow: none;
+        border-radius: 6px;
+        height: 40px;
+        background: #fdfdfd;
+      }
+      .bdgs-form-control:focus {
+        border-color: var(--bdgs-t01-mo-primary);
+        background: #fff;
+        box-shadow: none;
+      }
+
+      /* Similar Cards (Bottom) */
+      .bdgs-similar-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 15px;
+        transition: all 0.3s;
+      }
+      .bdgs-similar-card:hover {
+        border-color: var(--bdgs-t01-mo-primary);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      "
+    >
+      <div class="container">
+        <div class="row" style="display: flex; align-items: center">
+          <div class="col-xs-4">
+            <a
+              href="search_results.html"
+              class="btn btn-default btn-sm"
+              style="
+                border-radius: 20px;
+                font-weight: 600;
+                border: 1px solid #ddd;
+              "
+            >
+              <i class="fa fa-arrow-left"></i>
+              <span class="hidden-xs">Back to Results</span>
+            </a>
+          </div>
+          <div class="col-xs-4 text-center">
+            <a
+              href="index.html"
+              style="
+                font-weight: 800;
+                font-size: 20px;
+                color: #333;
+                text-decoration: none;
+              "
+              >Food Spot</a
+            >
+          </div>
+          <div class="col-xs-4 text-right">
+            <a
+              href="join.html"
+              class="btn btn-sm bdgs-t01-mo-btn-primary"
+              style="padding: 6px 15px"
+              >Subscribe</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div
+        class="bdgs-profile-hero"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80');
+        "
+      >
+        <div class="container" style="height: 100%; position: relative">
+          <div class="bdgs-profile-header-content bdgs-animate-fade">
+            <span class="bdgs-profile-badge">Featured Restaurant</span>
+            <h1
+              style="
+                color: #fff;
+                font-weight: 800;
+                font-size: 42px;
+                margin: 0 0 10px;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+              "
+            >
+              Luigi's Italian Restaurant
+            </h1>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+              "
+            >
+              <i class="fa fa-map-marker"></i> 123 Main Street, Manhattan, NYC
+              &nbsp;&bull;&nbsp;
+              <i class="fa fa-star" style="color: #ffc107"></i> 4.8 (142
+              reviews) &nbsp;&bull;&nbsp; $$ Moderate &nbsp;&bull;&nbsp;
+              <span style="color: #2ecc71">Open Now</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 40px">
+        <div class="row">
+          <div class="col-md-8 bdgs-animate-fade delay-1">
+            <ul class="nav nav-tabs bdgs-nav-tabs">
+              <li class="active">
+                <a href="#about" data-toggle="tab">Overview</a>
+              </li>
+              <li><a href="#menu" data-toggle="tab">Menu</a></li>
+              <li><a href="#reviews" data-toggle="tab">Reviews</a></li>
+              <li><a href="#events" data-toggle="tab">Events</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="about">
+                <div
+                  style="
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: #555;
+                    margin-bottom: 40px;
+                  "
+                >
+                  <h4 style="font-weight: 700; color: #333">About Us</h4>
+                  <p>
+                    We are a family-owned Italian restaurant serving authentic
+                    Tuscan cuisine for over 20 years. Our chef uses fresh,
+                    locally-sourced ingredients to create traditional Italian
+                    dishes with modern twists. Whether you're looking for a
+                    romantic dinner or a family gathering, Luigi's offers the
+                    perfect ambiance.
+                  </p>
+                  <p>
+                    Our pasta is made fresh daily, and our wine cellar features
+                    over 100 selections from Italy's finest regions.
+                  </p>
+
+                  <div
+                    style="
+                      margin-top: 20px;
+                      padding: 15px;
+                      background: #f0f8ff;
+                      border-radius: 8px;
+                      border-left: 4px solid var(--bdgs-t01-mo-primary);
+                    "
+                  >
+                    <strong><i class="fa fa-trophy"></i> Awards:</strong> James
+                    Beard Nominee 2024, NY Times "Best Pasta" 2023.
+                  </div>
+                </div>
+
+                <div class="bdgs-chef-box">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/44.jpg"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      border-radius: 50%;
+                      margin-right: 20px;
+                    "
+                  />
+                  <div>
+                    <h4 style="margin: 0 0 5px; font-weight: 800">
+                      Chef Marco Rossi
+                    </h4>
+                    <p style="margin: 0; color: #777; font-size: 14px">
+                      Executive Chef & Founder. Trained in Florence with 20
+                      years of culinary excellence.
+                    </p>
+                    <a
+                      href="#"
+                      style="
+                        font-size: 13px;
+                        font-weight: 700;
+                        margin-top: 5px;
+                        display: inline-block;
+                      "
+                      >Read Bio &rarr;</a
+                    >
+                  </div>
+                </div>
+
+                <h3 style="font-weight: 800; margin-bottom: 20px">
+                  Photo Gallery
+                </h3>
+                <div class="row">
+                  <div class="col-md-4 col-sm-6">
+                    <div
+                      class="bdgs-gallery-item"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=400&q=80');
+                      "
+                    >
+                      <div class="bdgs-gallery-overlay">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div
+                      class="bdgs-gallery-item"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=400&q=80');
+                      "
+                    >
+                      <div class="bdgs-gallery-overlay">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div
+                      class="bdgs-gallery-item"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80');
+                      "
+                    >
+                      <div class="bdgs-gallery-overlay">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div
+                      class="bdgs-gallery-item"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=400&q=80');
+                      "
+                    >
+                      <div class="bdgs-gallery-overlay">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div
+                      class="bdgs-gallery-item"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=400&q=80');
+                      "
+                    >
+                      <div class="bdgs-gallery-overlay">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <div
+                      class="bdgs-gallery-item"
+                      style="
+                        background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80');
+                      "
+                    >
+                      <div class="bdgs-gallery-overlay">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="menu">
+                <h3 style="font-weight: 800; margin-bottom: 20px">
+                  Signature Dishes
+                </h3>
+
+                <div class="bdgs-menu-item">
+                  <div>
+                    <strong style="font-size: 16px">Spaghetti Carbonara</strong>
+                    <div style="color: #777; font-size: 13px">
+                      Classic roman pasta with guanciale, pecorino, and egg
+                      yolk.
+                    </div>
+                  </div>
+                  <div class="bdgs-menu-price">$18</div>
+                </div>
+
+                <div class="bdgs-menu-item">
+                  <div>
+                    <strong style="font-size: 16px">Risotto ai Funghi</strong>
+                    <div style="color: #777; font-size: 13px">
+                      Creamy mushroom risotto with truffle oil and parmesan.
+                    </div>
+                  </div>
+                  <div class="bdgs-menu-price">$22</div>
+                </div>
+
+                <div class="bdgs-menu-item">
+                  <div>
+                    <strong style="font-size: 16px">Osso Buco</strong>
+                    <div style="color: #777; font-size: 13px">
+                      Braised veal shanks with gremolata and saffron risotto.
+                    </div>
+                  </div>
+                  <div class="bdgs-menu-price">$28</div>
+                </div>
+
+                <div class="text-center" style="margin-top: 30px">
+                  <a href="#" class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline"
+                    >View Full Menu PDF</a
+                  >
+                </div>
+              </div>
+
+              <div class="tab-pane" id="reviews">
+                <div
+                  style="
+                    margin-bottom: 30px;
+                    background: #f9f9f9;
+                    padding: 20px;
+                    border-radius: 12px;
+                    text-align: center;
+                  "
+                >
+                  <h2
+                    style="
+                      margin: 0;
+                      font-weight: 800;
+                      color: var(--bdgs-t01-mo-primary);
+                    "
+                  >
+                    4.8
+                  </h2>
+                  <div style="color: #ffc107; font-size: 18px; margin: 5px 0">
+                    ★★★★★
+                  </div>
+                  <span style="color: #777">Based on 142 reviews</span>
+                </div>
+
+                <div
+                  style="
+                    margin-bottom: 25px;
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 15px;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <strong
+                      >Sarah M.
+                      <span
+                        style="
+                          color: #28a745;
+                          font-size: 11px;
+                          text-transform: uppercase;
+                          border: 1px solid #28a745;
+                          padding: 1px 4px;
+                          border-radius: 4px;
+                          margin-left: 5px;
+                        "
+                        >Verified Diner</span
+                      ></strong
+                    >
+                    <span style="color: #999; font-size: 12px">2 days ago</span>
+                  </div>
+                  <div
+                    style="color: #ffc107; font-size: 12px; margin-bottom: 8px"
+                  >
+                    ★★★★★
+                  </div>
+                  <p style="color: #555">
+                    Absolutely amazing food and service. The carbonara was
+                    perfection. Will definitely come back!
+                  </p>
+                </div>
+
+                <div
+                  style="
+                    margin-bottom: 25px;
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 15px;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <strong>John D.</strong>
+                    <span style="color: #999; font-size: 12px">1 week ago</span>
+                  </div>
+                  <div
+                    style="color: #ffc107; font-size: 12px; margin-bottom: 8px"
+                  >
+                    ★★★★☆
+                  </div>
+                  <p style="color: #555">
+                    Great atmosphere and wine selection. A bit pricey but worth
+                    it for a special occasion.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="events">
+                <div class="bdgs-t01-mo-event-card">
+                  <div class="bdgs-t01-mo-event-date">
+                    <span class="bdgs-t01-mo-date-month">Dec</span>
+                    <span class="bdgs-t01-mo-date-day">15</span>
+                  </div>
+                  <div class="bdgs-t01-mo-event-body">
+                    <h4 class="bdgs-t01-mo-event-title">Wine Pairing Dinner</h4>
+                    <p class="text-muted" style="font-size: 13px; margin: 0">
+                      5-course meal paired with Italian wines.
+                    </p>
+                    <a
+                      href="events.html"
+                      style="
+                        font-size: 13px;
+                        font-weight: 700;
+                        display: block;
+                        margin-top: 10px;
+                      "
+                      >View Details &rarr;</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 bdgs-animate-fade delay-2">
+            <div class="bdgs-sticky-sidebar">
+              <div
+                class="bdgs-t01-mo-sidebar-box"
+                style="
+                  border-top: 4px solid var(--bdgs-t01-mo-primary);
+                  padding: 25px;
+                "
+              >
+                <h4 style="margin-top: 0; font-weight: 800; text-align: center">
+                  Make a Reservation
+                </h4>
+                <p
+                  class="text-center text-muted"
+                  style="font-size: 13px; margin-bottom: 20px"
+                >
+                  Book directly, instantly verified.
+                </p>
+
+                <form>
+                  <div class="row">
+                    <div class="col-md-6" style="padding-right: 5px">
+                      <div class="form-group">
+                        <label class="bdgs-form-label">Date</label>
+                        <input
+                          type="date"
+                          class="form-control bdgs-form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6" style="padding-left: 5px">
+                      <div class="form-group">
+                        <label class="bdgs-form-label">Guests</label>
+                        <select class="form-control bdgs-form-control">
+                          <option>2 People</option>
+                          <option>3 People</option>
+                          <option>4 People</option>
+                          <option>5+ People</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="bdgs-form-label">Time</label>
+                    <select class="form-control bdgs-form-control">
+                      <option>6:00 PM</option>
+                      <option>6:30 PM</option>
+                      <option>7:00 PM</option>
+                      <option>7:30 PM</option>
+                      <option>8:00 PM</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="bdgs-form-label"
+                      >Special Requests (Optional)</label
+                    >
+                    <textarea
+                      class="form-control bdgs-form-control"
+                      rows="2"
+                      style="height: auto"
+                      placeholder="Allergies, special occasion..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-block"
+                    style="margin-top: 15px"
+                  >
+                    Find a Table
+                  </button>
+                </form>
+
+                <div style="text-align: center; margin-top: 15px">
+                  <a
+                    href="#"
+                    class="text-muted"
+                    style="font-size: 13px; text-decoration: underline"
+                    >Send Message to Host</a
+                  >
+                </div>
+              </div>
+
+              <div class="bdgs-t01-mo-sidebar-box" style="margin-top: 20px">
+                <ul
+                  class="list-unstyled"
+                  style="font-size: 14px; line-height: 2.5"
+                >
+                  <li>
+                    <i
+                      class="fa fa-clock-o"
+                      style="width: 20px; color: var(--bdgs-t01-mo-primary)"
+                    ></i>
+                    <strong>Open Now:</strong> 11AM - 10PM
+                  </li>
+                  <li>
+                    <i
+                      class="fa fa-phone"
+                      style="width: 20px; color: var(--bdgs-t01-mo-primary)"
+                    ></i>
+                    (555) 123-4567
+                  </li>
+                  <li>
+                    <i
+                      class="fa fa-map-marker"
+                      style="width: 20px; color: var(--bdgs-t01-mo-primary)"
+                    ></i>
+                    <a href="#">Get Directions</a>
+                  </li>
+                  <li>
+                    <i
+                      class="fa fa-globe"
+                      style="width: 20px; color: var(--bdgs-t01-mo-primary)"
+                    ></i>
+                    <a href="#">www.luigis.com</a>
+                  </li>
+                </ul>
+                <hr />
+                <div style="display: flex; justify-content: space-around">
+                  <a href="#" class="text-muted"
+                    ><i class="fa fa-facebook fa-lg"></i
+                  ></a>
+                  <a href="#" class="text-muted"
+                    ><i class="fa fa-instagram fa-lg"></i
+                  ></a>
+                  <a href="#" class="text-muted"
+                    ><i class="fa fa-twitter fa-lg"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container"
+        style="margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee"
+      >
+        <h3 style="font-weight: 800; margin-bottom: 30px">
+          Similar Spots Nearby
+        </h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="bdgs-similar-card">
+              <div style="display: flex; align-items: center">
+                <div
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=200&q=80');
+                    background-size: cover;
+                    border-radius: 6px;
+                    margin-right: 15px;
+                  "
+                ></div>
+                <div>
+                  <h5 style="margin: 0 0 5px; font-weight: 700">
+                    Marco's Pizzeria
+                  </h5>
+                  <div style="font-size: 12px; color: #777">
+                    0.5 mi away &bull; Italian
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-similar-card">
+              <div style="display: flex; align-items: center">
+                <div
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80');
+                    background-size: cover;
+                    border-radius: 6px;
+                    margin-right: 15px;
+                  "
+                ></div>
+                <div>
+                  <h5 style="margin: 0 0 5px; font-weight: 700">
+                    The French Bistro
+                  </h5>
+                  <div style="font-size: 12px; color: #777">
+                    0.8 mi away &bull; French
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-similar-card">
+              <div style="display: flex; align-items: center">
+                <div
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    background-image: url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=200&q=80');
+                    background-size: cover;
+                    border-radius: 6px;
+                    margin-right: 15px;
+                  "
+                ></div>
+                <div>
+                  <h5 style="margin: 0 0 5px; font-weight: 700">
+                    Sweet Tooth Bakery
+                  </h5>
+                  <div style="font-size: 12px; color: #777">
+                    1.2 mi away &bull; Bakery
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

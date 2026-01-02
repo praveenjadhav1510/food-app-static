@@ -1,0 +1,203 @@
+/**
+ * Widget: BDGS-T01-MO-Footer
+ * Description: Premium Light Footer (Clean & Minimalist)
+ */
+
+/* Main Footer Container */
+.bdgs-footer-light {
+  background-color: #f8f9fa; /* Soft Light Grey */
+  color: #6c757d; /* Muted Text */
+  font-family: "Open Sans", sans-serif;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  position: relative;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Brand Section */
+.bdgs-footer-brand {
+  color: var(--bdgs-t01-mo-primary);
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  display: block;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.bdgs-footer-brand:hover {
+  color: var(--bdgs-t01-mo-primary-dark);
+  text-decoration: none;
+}
+
+.bdgs-footer-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 320px;
+  color: #555;
+}
+
+/* Headings */
+.bdgs-footer-heading {
+  color: #212529; /* Dark headings */
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+/* Links List */
+.bdgs-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bdgs-footer-links li {
+  margin-bottom: 12px;
+}
+
+.bdgs-footer-links a {
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.bdgs-footer-links a:hover {
+  color: var(--bdgs-t01-mo-primary);
+  transform: translateX(3px);
+}
+
+/* Newsletter Input */
+.bdgs-footer-input-group {
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 50px;
+}
+
+.bdgs-footer-input {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  color: #333;
+  border-radius: 50px;
+  padding: 12px 20px;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.bdgs-footer-input:focus {
+  border-color: var(--bdgs-t01-mo-primary);
+}
+
+.bdgs-footer-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 40px;
+  border-radius: 40px;
+  padding: 0 25px;
+  background: var(--bdgs-t01-mo-primary);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+.bdgs-footer-btn:hover {
+  background: #0062cc;
+  transform: translateY(-1px);
+}
+
+/* Social Icons (Solid Circles) */
+.bdgs-social-circle {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background: #fff;
+  color: #555;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bdgs-social-circle:hover {
+  background: var(--bdgs-t01-mo-primary);
+  color: #fff;
+  border-color: var(--bdgs-t01-mo-primary);
+  transform: translateY(-3px);
+}
+
+/* App Store Badges */
+.bdgs-app-badges {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+.bdgs-app-btn {
+  background: #212529; /* Dark buttons stand out on light footer */
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  width: 135px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.bdgs-app-btn:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.bdgs-app-btn i {
+  font-size: 22px;
+  margin-right: 10px;
+}
+.bdgs-app-text span {
+  font-size: 13px;
+  font-weight: 700;
+  display: block;
+}
+
+/* Copyright Bar */
+.bdgs-footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #e9ecef;
+  padding-top: 30px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .bdgs-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .bdgs-app-badges {
+    flex-direction: column;
+  }
+  .bdgs-app-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

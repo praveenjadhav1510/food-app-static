@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Hero Section */
+      .bdgs-faq-hero {
+        background: linear-gradient(
+          135deg,
+          var(--bdgs-t01-mo-primary) 0%,
+          #004494 100%
+        );
+        color: #fff;
+        padding: 80px 0 100px;
+        text-align: center;
+      }
+      .bdgs-search-input {
+        height: 55px;
+        border-radius: 30px;
+        border: none;
+        padding: 0 30px;
+        font-size: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        width: 100%;
+      }
+
+      /* Category Cards */
+      .bdgs-cat-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        transition: transform 0.3s;
+        border: 1px solid #eee;
+        cursor: pointer;
+      }
+      .bdgs-cat-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--bdgs-t01-mo-primary);
+      }
+      .bdgs-cat-icon {
+        width: 60px;
+        height: 60px;
+        background: #eaf4ff;
+        color: var(--bdgs-t01-mo-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin: 0 auto 20px;
+      }
+
+      /* Accordion Styling */
+      .panel-group .panel {
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        margin-bottom: 10px;
+      }
+      .panel-heading {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .panel-title a {
+        display: block;
+        font-weight: 700;
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .panel-title a:hover {
+        color: var(--bdgs-t01-mo-primary);
+      }
+      .panel-body {
+        border-top: 1px solid #f9f9f9 !important;
+        padding: 20px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Support CTA */
+      .bdgs-support-strip {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        margin-top: 60px;
+        border: 1px solid #eee;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.html">
+            <b>Food Spot</b>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+            <li><a href="deals.html">Deals</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >
+                  Add Restaurant
+                </a>
+              </div>
+            </li>
+
+            <li class="visible-xs">
+              <a
+                href="join.html"
+                style="
+                  font-weight: 700;
+                  color: var(--bdgs-t01-mo-primary) !important;
+                "
+              >
+                + Add Restaurant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="bdgs-faq-header">
+      <div class="container" style="text-align: center; padding: 80px 0">
+        <h1 style="font-weight: 800; margin-top: 0">How can we help?</h1>
+        <p style="font-size: 18px; opacity: 0.9">
+          Search our knowledge base or browse categories below.
+        </p>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search for answers..."
+          style="
+            max-width: 500px;
+            margin: 20px auto;
+            height: 50px;
+            border-radius: 25px;
+            padding: 0 25px;
+          "
+        />
+      </div>
+    </div>
+
+    <div class="bdgs-t01-mo-wrapper" style="background-color: #f4f6f8">
+      <div
+        class="container"
+        style="margin-top: 50px; position: relative; z-index: 999"
+      >
+        <div class="row">
+          <div class="col-md-4">
+            <div class="bdgs-cat-card">
+              <div class="bdgs-cat-icon"><i class="fa fa-cutlery"></i></div>
+              <h4 style="font-weight: 700; margin-bottom: 5px">For Diners</h4>
+              <p style="color: #777; font-size: 13px; margin: 0">
+                Reservations, reviews & account.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-cat-card">
+              <div class="bdgs-cat-icon"><i class="fa fa-briefcase"></i></div>
+              <h4 style="font-weight: 700; margin-bottom: 5px">
+                For Restaurants
+              </h4>
+              <p style="color: #777; font-size: 13px; margin: 0">
+                Managing listings & analytics.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-cat-card">
+              <div class="bdgs-cat-icon"><i class="fa fa-credit-card"></i></div>
+              <h4 style="font-weight: 700; margin-bottom: 5px">Billing</h4>
+              <p style="color: #777; font-size: 13px; margin: 0">
+                Subscriptions, refunds & invoices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding: 40px 0 80px">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3
+              style="
+                font-weight: 800;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+              "
+            >
+              For Diners
+            </h3>
+            <div class="panel-group" id="accordion1">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion1"
+                      href="#q1"
+                      >Is Food Spot free to use? <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q1" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    Yes! Searching for restaurants, reading reviews, and booking
+                    tables is 100% free for all diners.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion1"
+                      href="#q2"
+                      >How do I verify my review?
+                      <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    We take authenticity seriously. To leave a verified review,
+                    you must either book a table through our platform (we'll
+                    email you a link after your meal) or verify your phone
+                    number via SMS.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion1"
+                      href="#q3"
+                      >Can I cancel or modify a reservation?
+                      <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Absolutely. Go to your Dashboard > Upcoming Reservations.
+                    You can modify the guest count or cancel up to 30 minutes
+                    before your scheduled time.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion1"
+                      href="#q4"
+                      >How do the coupons work? <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q4" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Navigate to our 'Deals' page, click 'Get Coupon', and
+                    present the digital code to your server before ordering. No
+                    printing required!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3
+              style="
+                font-weight: 800;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+                margin-top: 50px;
+              "
+            >
+              For Business Owners
+            </h3>
+            <div class="panel-group" id="accordion2">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion2"
+                      href="#q5"
+                      >How much does it cost to list my restaurant?
+                      <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q5" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    We offer a Free Tier which includes a basic listing. Our
+                    Premium plans start at $49/mo and include advanced
+                    analytics, top search placement, and zero-commission booking
+                    tools.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion2"
+                      href="#q6"
+                      >How do I claim an existing listing?
+                      <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q6" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    If you see your business already listed, click the "Claim
+                    this Business" link on the profile page. You will need to
+                    provide proof of ownership via phone or email verification.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion2"
+                      href="#q7"
+                      >Can I respond to reviews? <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q7" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Yes, all registered business owners can reply to reviews
+                    publicly. We encourage professional and constructive
+                    responses.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3
+              style="
+                font-weight: 800;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+                margin-top: 50px;
+              "
+            >
+              Account & Billing
+            </h3>
+            <div class="panel-group" id="accordion3">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#q8"
+                      >I forgot my password. <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q8" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Click "Log In" and select "Forgot Password". We will send a
+                    secure reset link to your registered email address.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#q9"
+                      >What payment methods do you accept?
+                      <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q9" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    We accept all major credit cards (Visa, Mastercard, Amex)
+                    and PayPal for Premium subscriptions.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a
+                      data-toggle="collapse"
+                      data-parent="#accordion3"
+                      href="#q10"
+                      >How do I delete my account?
+                      <i class="fa fa-angle-down"></i
+                    ></a>
+                  </h4>
+                </div>
+                <div id="q10" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    We're sad to see you go. You can delete your account from
+                    the Settings tab in your user dashboard. This action is
+                    permanent.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bdgs-support-strip">
+              <i
+                class="fa fa-life-ring"
+                style="
+                  font-size: 40px;
+                  color: var(--bdgs-t01-mo-primary);
+                  margin-bottom: 20px;
+                "
+              ></i>
+              <h3 style="font-weight: 800; margin-top: 0">Still need help?</h3>
+              <p style="color: #777; margin-bottom: 20px">
+                Our support team is available Mon-Fri, 9am - 6pm EST.
+              </p>
+              <a
+                href="contact.html"
+                class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >Contact Support</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Deals & Coupons | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Enhanced Hero */
+      .bdgs-deals-hero {
+        background: linear-gradient(
+          135deg,
+          var(--bdgs-t01-mo-primary) 0%,
+          #004494 100%
+        );
+        padding: 100px 0 80px;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+      }
+      /* Abstract decorative circle in hero */
+      .bdgs-hero-circle {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        top: -50px;
+        right: -50px;
+      }
+
+      /* Deal Card Styling */
+      .bdgs-deal-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        transition: all 0.3s;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      }
+      .bdgs-deal-card:hover {
+        border-color: var(--bdgs-t01-mo-primary);
+        box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15);
+        transform: translateY(-5px);
+      }
+      .bdgs-deal-img {
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .bdgs-deal-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #27ae60;
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 11px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      .bdgs-deal-body {
+        padding: 25px;
+        text-align: center;
+      }
+      .bdgs-deal-title {
+        font-size: 18px;
+        font-weight: 800;
+        margin: 10px 0;
+        color: #333;
+        height: 50px;
+        overflow: hidden;
+      }
+      .bdgs-deal-meta {
+        color: #777;
+        font-size: 13px;
+        margin-bottom: 15px;
+        height: 40px;
+        overflow: hidden;
+        line-height: 1.5;
+      }
+      .bdgs-scissors-line {
+        border-top: 2px dashed #eee;
+        margin: 20px 0;
+        position: relative;
+      }
+      .bdgs-scissors-icon {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 0 10px;
+        color: #ccc;
+        font-size: 16px;
+      }
+
+      /* Enhanced 'How It Works' */
+      .bdgs-how-it-works {
+        background: #f9f9f9;
+        padding: 80px 0;
+        border-top: 1px solid #eee;
+        margin-top: 40px;
+      }
+      .bdgs-step-card {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 16px;
+        text-align: center;
+        position: relative;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+      .bdgs-step-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .bdgs-step-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 123, 255, 0.1);
+        color: var(--bdgs-t01-mo-primary);
+        border-radius: 50%;
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+      }
+      .bdgs-step-number {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 60px;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.03);
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      /* Subscribe Banner */
+      .bdgs-subscribe-banner {
+        background: #1a252f; /* Dark Slate */
+        color: #ffffff !important;
+        padding: 60px;
+        border-radius: 16px;
+        text-align: center;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      }
+      .bdgs-subscribe-banner h3 {
+        color: #fff !important;
+        font-weight: 800;
+        font-size: 32px;
+        margin-top: 0;
+      }
+      .bdgs-subscribe-banner p {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.html">
+            <b>Food Spot</b>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+            <li>
+              <a
+                href="deals.html"
+                style="color: var(--bdgs-t01-mo-primary) !important"
+                >Deals</a
+              >
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >
+                  Add Restaurant
+                </a>
+              </div>
+            </li>
+
+            <li class="visible-xs">
+              <a
+                href="join.html"
+                style="
+                  font-weight: 700;
+                  color: var(--bdgs-t01-mo-primary) !important;
+                "
+              >
+                + Add Restaurant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div class="bdgs-deals-hero">
+        <div class="bdgs-hero-circle"></div>
+        <div class="container bdgs-animate-fade">
+          <h1
+            style="
+              margin: 0;
+              font-weight: 800;
+              font-size: 48px;
+              letter-spacing: -1px;
+              text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            "
+          >
+            Exclusive Food Deals
+          </h1>
+          <p
+            style="
+              font-size: 20px;
+              opacity: 0.9;
+              margin-top: 15px;
+              font-weight: 300;
+            "
+          >
+            Unlock 50% off, BOGO offers, and free appetizers at top local
+            restaurants.
+          </p>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top: 40px">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-1">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge">50% OFF</span>
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  Marco's Pizzeria
+                </h5>
+                <h3 class="bdgs-deal-title">Half Price Pizza Night</h3>
+                <p class="bdgs-deal-meta">
+                  Get 50% off any large pizza every Tuesday. Dine-in only.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-2">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge" style="background: #8e44ad"
+                  >FREE ITEM</span
+                >
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  Tokyo Sushi
+                </h5>
+                <h3 class="bdgs-deal-title">Free Edamame</h3>
+                <p class="bdgs-deal-meta">
+                  Free appetizer with any special roll purchase over $15.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-3">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge" style="background: #e67e22"
+                  >BOGO</span
+                >
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  Sweet Tooth Bakery
+                </h5>
+                <h3 class="bdgs-deal-title">Buy 1 Get 1 Coffee</h3>
+                <p class="bdgs-deal-meta">
+                  Buy any artisan coffee, get one free for a friend.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-1">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge">20% OFF</span>
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  The Burger Joint
+                </h5>
+                <h3 class="bdgs-deal-title">Lunch Combo Deal</h3>
+                <p class="bdgs-deal-meta">
+                  20% off all burger combos between 11AM - 2PM.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-2">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge" style="background: #e74c3c"
+                  >$5 OFF</span
+                >
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  Green Leaf Cafe
+                </h5>
+                <h3 class="bdgs-deal-title">$5 Off Vegan Bowls</h3>
+                <p class="bdgs-deal-meta">
+                  Save $5 on any signature bowl purchase.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-3">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge">FREE DESSERT</span>
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  The Steakhouse
+                </h5>
+                <h3 class="bdgs-deal-title">Free Dessert w/ Steak</h3>
+                <p class="bdgs-deal-meta">
+                  Complimentary cheesecake with any ribeye steak.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-1">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge">25% OFF</span>
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  Golden Dragon
+                </h5>
+                <h3 class="bdgs-deal-title">Weekday Dim Sum</h3>
+                <p class="bdgs-deal-meta">
+                  25% off all dim sum baskets Mon-Thu.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-2">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge" style="background: #e67e22"
+                  >TACO TUESDAY</span
+                >
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  El Camino Tacos
+                </h5>
+                <h3 class="bdgs-deal-title">$2 Tacos</h3>
+                <p class="bdgs-deal-meta">
+                  All street tacos are just $2 every Tuesday.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 bdgs-animate-fade delay-3">
+            <div class="bdgs-deal-card">
+              <div
+                class="bdgs-deal-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=400&q=80');
+                "
+              >
+                <span class="bdgs-deal-badge" style="background: #8e44ad"
+                  >KIDS EAT FREE</span
+                >
+              </div>
+              <div class="bdgs-deal-body">
+                <h5
+                  style="
+                    color: #999;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                  "
+                >
+                  Family Diner
+                </h5>
+                <h3 class="bdgs-deal-title">Sunday Family Day</h3>
+                <p class="bdgs-deal-meta">
+                  One free kids meal with every adult entree purchase.
+                </p>
+                <div class="bdgs-scissors-line">
+                  <i class="fa fa-scissors bdgs-scissors-icon"></i>
+                </div>
+                <a
+                  href="deal_details.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm btn-block"
+                  >Get Coupon</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bdgs-how-it-works">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <h2 style="font-weight: 800; margin-bottom: 60px">
+                How to Redeem
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="bdgs-step-card">
+                <div class="bdgs-step-number">01</div>
+                <div class="bdgs-step-icon-wrapper">
+                  <i class="fa fa-search"></i>
+                </div>
+                <h4 style="font-weight: 700">Find a Deal</h4>
+                <p style="color: #777">
+                  Browse hundreds of exclusive coupons in your area on Food
+                  Spot.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bdgs-step-card">
+                <div class="bdgs-step-number">02</div>
+                <div class="bdgs-step-icon-wrapper">
+                  <i class="fa fa-qrcode"></i>
+                </div>
+                <h4 style="font-weight: 700">Get the Code</h4>
+                <p style="color: #777">
+                  Click "Get Coupon" to reveal the digital code or print it out.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bdgs-step-card">
+                <div class="bdgs-step-number">03</div>
+                <div class="bdgs-step-icon-wrapper">
+                  <i class="fa fa-smile-o"></i>
+                </div>
+                <h4 style="font-weight: 700">Show & Save</h4>
+                <p style="color: #777">
+                  Show the code to your server before ordering to instantly save
+                  money.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="bdgs-subscribe-banner">
+                <h3>Never Miss a Deal</h3>
+                <p>
+                  Get the best local food coupons delivered to your inbox
+                  weekly.
+                </p>
+                <div style="display: flex; max-width: 500px; margin: 0 auto">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your email"
+                    style="
+                      height: 50px;
+                      border-radius: 8px 0 0 8px;
+                      border: none;
+                      font-size: 16px;
+                    "
+                  />
+                  <button
+                    class="btn btn-primary"
+                    style="
+                      height: 50px;
+                      padding: 0 30px;
+                      border-radius: 0 8px 8px 0;
+                      font-weight: 700;
+                      background: var(--bdgs-t01-mo-primary);
+                      border: none;
+                      font-size: 14px;
+                      text-transform: uppercase;
+                    "
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

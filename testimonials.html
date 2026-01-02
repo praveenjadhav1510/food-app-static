@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Stats Bar */
+      .bdgs-stats-bar {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+        text-align: center;
+        color: #555;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      /* Testimonial Cards */
+      .bdgs-review-card {
+        min-height: 300px;
+        display: grid;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eee;
+        margin-bottom: 30px;
+        transition: transform 0.3s;
+      }
+      .bdgs-review-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--bdgs-t01-mo-primary);
+      }
+
+      .bdgs-stars {
+        color: #f1c40f;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+      .bdgs-review-text {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .bdgs-user-row {
+        display: flex;
+        align-items: center;
+      }
+      .bdgs-user-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+      .bdgs-user-name {
+        font-weight: 700;
+        display: block;
+        color: #333;
+      }
+      .bdgs-user-role {
+        font-size: 12px;
+        color: #999;
+      }
+
+      /* Featured Story */
+      .bdgs-featured-story {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        margin-bottom: 80px;
+      }
+      .bdgs-story-content {
+        padding: 60px 40px;
+      }
+      .bdgs-story-img {
+        background-image: url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        min-height: 400px;
+      }
+
+      /* Dark Section for Partners */
+      .bdgs-dark-section {
+        background: #2c3e50;
+        color: #fff;
+        padding: 80px 0;
+      }
+      .bdgs-dark-section .bdgs-review-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .bdgs-dark-section .bdgs-review-text {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .bdgs-dark-section .bdgs-user-name {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.html">
+            <b>Food Spot</b>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+            <li><a href="deals.html">Deals</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >
+                  Add Restaurant
+                </a>
+              </div>
+            </li>
+
+            <li class="visible-xs">
+              <a
+                href="join.html"
+                style="
+                  font-weight: 700;
+                  color: var(--bdgs-t01-mo-primary) !important;
+                "
+              >
+                + Add Restaurant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div style="background: #f9f9f9; padding: 80px 0 60px; text-align: center">
+      <div class="container bdgs-animate-fade">
+        <h1 style="font-weight: 800; font-size: 48px; margin-bottom: 20px">
+          Loved by 2.5 Million Foodies
+        </h1>
+        <p
+          style="font-size: 18px; color: #777; max-width: 700px; margin: 0 auto"
+        >
+          Don't just take our word for it. Read honest reviews from our
+          community of diners and restaurant partners.
+        </p>
+      </div>
+    </div>
+
+    <div class="bdgs-stats-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <i class="fa fa-star" style="color: #f1c40f"></i> 4.9/5 Average
+            Rating
+          </div>
+          <div class="col-sm-4">
+            <i
+              class="fa fa-users"
+              style="color: var(--bdgs-t01-mo-primary)"
+            ></i>
+            10,000+ Verified Reviews
+          </div>
+          <div class="col-sm-4">
+            <i class="fa fa-map-marker" style="color: #e74c3c"></i> Active in 12
+            Cities
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div class="container" style="padding: 80px 0">
+        <div class="row text-center" style="margin-bottom: 50px">
+          <div class="col-md-12">
+            <h2 style="font-weight: 800">Community Favorites</h2>
+            <p class="text-muted">
+              What our users are saying about finding food.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 bdgs-animate-fade delay-1">
+            <div class="bdgs-review-card">
+              <div class="bdgs-stars">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i
+                ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                ><i class="fa fa-star"></i>
+              </div>
+              <p class="bdgs-review-text">
+                "I used to spend an hour debating where to eat. The 'Get Match'
+                feature is a lifesaver! It found us a hidden gem Italian spot
+                that wasn't even on Google Maps yet."
+              </p>
+              <div class="bdgs-user-row">
+                <img
+                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  class="bdgs-user-avatar"
+                />
+                <div>
+                  <span class="bdgs-user-name">Sarah Jenkins</span>
+                  <span class="bdgs-user-role">Foodie in NYC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 bdgs-animate-fade delay-2">
+            <div class="bdgs-review-card">
+              <div class="bdgs-stars">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i
+                ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                ><i class="fa fa-star-half-o"></i>
+              </div>
+              <p class="bdgs-review-text">
+                "The exclusive deals are actually good. I saved 50% on a sushi
+                boat last Tuesday. It pays for itself just by using the
+                coupons."
+              </p>
+              <div class="bdgs-user-row">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  class="bdgs-user-avatar"
+                />
+                <div>
+                  <span class="bdgs-user-name">Michael Chen</span>
+                  <span class="bdgs-user-role">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 bdgs-animate-fade delay-3">
+            <div class="bdgs-review-card">
+              <div class="bdgs-stars">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i
+                ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                ><i class="fa fa-star"></i>
+              </div>
+              <p class="bdgs-review-text">
+                "Finally, a platform with REAL reviews. I'm tired of bots on
+                other sites. Food Spot's verification system makes me trust the
+                ratings again."
+              </p>
+              <div class="bdgs-user-row">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  class="bdgs-user-avatar"
+                />
+                <div>
+                  <span class="bdgs-user-name">Emily Ross</span>
+                  <span class="bdgs-user-role">Food Blogger</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="bdgs-featured-story">
+          <div class="row" style="margin: 0">
+            <div class="col-md-6 hidden-sm hidden-xs bdgs-story-img"></div>
+            <div class="col-md-6 bdgs-story-content">
+              <span
+                style="
+                  background: var(--bdgs-t01-mo-primary);
+                  color: #fff;
+                  padding: 5px 10px;
+                  border-radius: 4px;
+                  font-size: 11px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                "
+                >Success Story</span
+              >
+              <h2 style="font-weight: 800; margin-top: 20px; font-size: 32px">
+                "Bookings doubled in just 3 months."
+              </h2>
+              <p
+                style="
+                  color: #555;
+                  font-size: 16px;
+                  line-height: 1.8;
+                  margin-bottom: 30px;
+                "
+              >
+                When Luigi opened his family restaurant, he struggled to get
+                visibility against the big chains. After joining Food Spot's
+                Premium tier, he utilized the "Deal of the Week" feature to
+                attract locals on slow Tuesday nights.
+              </p>
+              <blockquote
+                style="
+                  border-left: 4px solid var(--bdgs-t01-mo-primary);
+                  padding-left: 20px;
+                  font-style: italic;
+                  color: #777;
+                "
+              >
+                "The dashboard is so easy to use. I can see exactly how many
+                people viewed my menu and booked a table. It's the best
+                marketing investment I've made."
+              </blockquote>
+              <div style="margin-top: 30px">
+                <strong style="display: block; font-size: 16px"
+                  >Luigi Romano</strong
+                >
+                <span style="color: #999; font-size: 14px"
+                  >Owner, Luigi's Italian</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bdgs-dark-section">
+        <div class="container">
+          <div class="row text-center" style="margin-bottom: 50px">
+            <div class="col-md-12">
+              <h2 style="font-weight: 800">From Our Restaurant Partners</h2>
+              <p style="opacity: 0.7">
+                Join 2,500+ restaurants growing their business with us.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="bdgs-review-card">
+                <div class="bdgs-stars">
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i
+                  ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                  ><i class="fa fa-star"></i>
+                </div>
+                <p class="bdgs-review-text">
+                  "Zero commissions on bookings changed everything for us. Other
+                  platforms take 20-30%, but Food Spot lets us keep our
+                  hard-earned profit."
+                </p>
+                <div class="bdgs-user-row">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/85.jpg"
+                    class="bdgs-user-avatar"
+                  />
+                  <div>
+                    <span class="bdgs-user-name">David Kim</span>
+                    <span class="bdgs-user-role">Owner, Seoul BBQ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="bdgs-review-card">
+                <div class="bdgs-stars">
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i
+                  ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                  ><i class="fa fa-star"></i>
+                </div>
+                <p class="bdgs-review-text">
+                  "The support team is incredible. They helped me set up my
+                  profile and optimize my menu photos. Highly recommended."
+                </p>
+                <div class="bdgs-user-row">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/12.jpg"
+                    class="bdgs-user-avatar"
+                  />
+                  <div>
+                    <span class="bdgs-user-name">Maria Garcia</span>
+                    <span class="bdgs-user-role">Manager, El Camino</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="bdgs-review-card">
+                <div class="bdgs-stars">
+                  <i class="fa fa-star"></i><i class="fa fa-star"></i
+                  ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                  ><i class="fa fa-star"></i>
+                </div>
+                <p class="bdgs-review-text">
+                  "We filled our entire patio for the summer launch event using
+                  the Events feature. The exposure here is unmatched."
+                </p>
+                <div class="bdgs-user-row">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/44.jpg"
+                    class="bdgs-user-avatar"
+                  />
+                  <div>
+                    <span class="bdgs-user-name">James Wilson</span>
+                    <span class="bdgs-user-role">The Burger Joint</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row text-center" style="margin-top: 40px">
+            <a href="join.html" class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+              >Become a Partner</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Food Spot</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+
+    <style>
+      /* Contact Page Specifics */
+      .bdgs-contact-hero {
+        background-color: var(--bdgs-t01-mo-primary-dark);
+        color: #fff;
+        padding: 80px 0 120px;
+        text-align: center;
+        position: relative;
+      }
+      .bdgs-contact-card {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        margin-top: -80px; /* Overlap effect */
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Office Cards */
+      .bdgs-office-card {
+        background: #f9f9f9;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        transition: all 0.3s;
+        height: 100%;
+      }
+      .bdgs-office-card:hover {
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transform: translateY(-5px);
+        border-color: var(--bdgs-t01-mo-primary);
+      }
+      .bdgs-office-icon {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--bdgs-t01-mo-primary);
+        font-size: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+      }
+
+      /* FAQ Accordion */
+      .bdgs-faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+      }
+      .bdgs-faq-question {
+        font-size: 16px;
+        font-weight: 700;
+        color: #333;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+      }
+      .bdgs-faq-question:hover,
+      .bdgs-faq-question:focus {
+        text-decoration: none;
+        color: var(--bdgs-t01-mo-primary);
+      }
+      .bdgs-faq-answer {
+        color: #777;
+        margin-top: 10px;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      /* Map Container */
+      .bdgs-map-container {
+        width: 100%;
+        height: 450px;
+        background: #eee;
+        position: relative;
+      }
+      .bdgs-map-iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span
+            ><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><b>Food Spot</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left" style="margin-left: 20px">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                  >Add Restaurant</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div class="bdgs-contact-hero">
+        <div class="container">
+          <h1
+            style="
+              font-weight: 800;
+              font-size: 42px;
+              color: #fff;
+              margin-bottom: 10px;
+            "
+          >
+            Get in Touch
+          </h1>
+          <p style="font-size: 18px; color: rgba(255, 255, 255, 0.8)">
+            We'd love to hear from you. Our team is here to help.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="bdgs-contact-card bdgs-animate-fade">
+          <div class="row">
+            <div class="col-md-5">
+              <h3 style="font-weight: 800; margin-top: 0; margin-bottom: 20px">
+                Contact Information
+              </h3>
+              <p style="color: #777; margin-bottom: 40px; line-height: 1.6">
+                Fill out the form and our team will get back to you within 24
+                hours. For urgent matters, please call our support line.
+              </p>
+
+              <div style="margin-bottom: 25px; display: flex">
+                <i
+                  class="fa fa-map-marker"
+                  style="
+                    font-size: 24px;
+                    color: var(--bdgs-t01-mo-primary);
+                    width: 40px;
+                  "
+                ></i>
+                <div>
+                  <strong
+                    style="display: block; font-size: 15px; margin-bottom: 5px"
+                    >Headquarters</strong
+                  >
+                  <span style="color: #555"
+                    >123 Culinary Avenue, Suite 400<br />New York, NY
+                    10012</span
+                  >
+                </div>
+              </div>
+
+              <div style="margin-bottom: 25px; display: flex">
+                <i
+                  class="fa fa-envelope-o"
+                  style="
+                    font-size: 20px;
+                    color: var(--bdgs-t01-mo-primary);
+                    width: 40px;
+                  "
+                ></i>
+                <div>
+                  <strong
+                    style="display: block; font-size: 15px; margin-bottom: 5px"
+                    >Email Us</strong
+                  >
+                  <a
+                    href="mailto:support@foodspot.com"
+                    style="color: var(--bdgs-t01-mo-primary)"
+                    >support@foodspot.com</a
+                  >
+                </div>
+              </div>
+
+              <div style="margin-bottom: 25px; display: flex">
+                <i
+                  class="fa fa-phone"
+                  style="
+                    font-size: 24px;
+                    color: var(--bdgs-t01-mo-primary);
+                    width: 40px;
+                  "
+                ></i>
+                <div>
+                  <strong
+                    style="display: block; font-size: 15px; margin-bottom: 5px"
+                    >Call Us</strong
+                  >
+                  <span style="color: #555">(555) 123-4567</span>
+                  <div style="font-size: 12px; color: #999; margin-top: 2px">
+                    Mon-Fri, 9am-6pm EST
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1">
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label
+                        style="
+                          font-size: 12px;
+                          font-weight: 700;
+                          text-transform: uppercase;
+                          color: #999;
+                        "
+                        >First Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        style="
+                          height: 45px;
+                          background: #f9f9f9;
+                          border: 1px solid #eee;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label
+                        style="
+                          font-size: 12px;
+                          font-weight: 700;
+                          text-transform: uppercase;
+                          color: #999;
+                        "
+                        >Last Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        style="
+                          height: 45px;
+                          background: #f9f9f9;
+                          border: 1px solid #eee;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label
+                    style="
+                      font-size: 12px;
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      color: #999;
+                    "
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    style="
+                      height: 45px;
+                      background: #f9f9f9;
+                      border: 1px solid #eee;
+                    "
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label
+                    style="
+                      font-size: 12px;
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      color: #999;
+                    "
+                    >Topic</label
+                  >
+                  <select
+                    class="form-control"
+                    style="
+                      height: 45px;
+                      background: #f9f9f9;
+                      border: 1px solid #eee;
+                    "
+                  >
+                    <option>General Inquiry</option>
+                    <option>Partner Support</option>
+                    <option>Billing Question</option>
+                    <option>Report an Issue</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label
+                    style="
+                      font-size: 12px;
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      color: #999;
+                    "
+                    >Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    style="background: #f9f9f9; border: 1px solid #eee"
+                  ></textarea>
+                </div>
+
+                <button
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-block"
+                  style="padding: 12px"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container bdgs-animate-fade delay-1"
+        style="padding-top: 80px"
+      >
+        <div class="row text-center" style="margin-bottom: 40px">
+          <div class="col-md-12">
+            <h3 style="font-weight: 800">Our Offices</h3>
+            <p class="text-muted">Come say hello at one of our global hubs.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="bdgs-office-card">
+              <div class="bdgs-office-icon">
+                <i class="fa fa-building-o"></i>
+              </div>
+              <h4 style="font-weight: 700">New York</h4>
+              <p style="color: #777; font-size: 14px">
+                123 Culinary Ave<br />New York, NY 10012
+              </p>
+              <a href="#" style="font-size: 12px; font-weight: 700"
+                >View on Map &rarr;</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-office-card">
+              <div class="bdgs-office-icon"><i class="fa fa-coffee"></i></div>
+              <h4 style="font-weight: 700">London</h4>
+              <p style="color: #777; font-size: 14px">
+                45 Oxford Street<br />London, UK W1D 1BS
+              </p>
+              <a href="#" style="font-size: 12px; font-weight: 700"
+                >View on Map &rarr;</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-office-card">
+              <div class="bdgs-office-icon"><i class="fa fa-sun-o"></i></div>
+              <h4 style="font-weight: 700">Los Angeles</h4>
+              <p style="color: #777; font-size: 14px">
+                8800 Sunset Blvd<br />West Hollywood, CA 90069
+              </p>
+              <a href="#" style="font-size: 12px; font-weight: 700"
+                >View on Map &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container bdgs-animate-fade delay-2" style="padding: 80px 0">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h3
+              style="font-weight: 800; text-align: center; margin-bottom: 40px"
+            >
+              Frequently Asked Questions
+            </h3>
+
+            <div class="bdgs-faq-item">
+              <a class="bdgs-faq-question" data-toggle="collapse" href="#faq1"
+                >How do I list my restaurant?
+                <span class="pull-right"><i class="fa fa-plus"></i></span
+              ></a>
+              <div id="faq1" class="collapse bdgs-faq-answer">
+                Click on the "Add Restaurant" button in the top right corner.
+                You can start with a free Basic account or choose a Premium plan
+                for more visibility.
+              </div>
+            </div>
+
+            <div class="bdgs-faq-item">
+              <a class="bdgs-faq-question" data-toggle="collapse" href="#faq2"
+                >Is Food Spot free for users?
+                <span class="pull-right"><i class="fa fa-plus"></i></span
+              ></a>
+              <div id="faq2" class="collapse bdgs-faq-answer">
+                Yes! Searching for restaurants, reading reviews, and booking
+                tables is 100% free for all foodies.
+              </div>
+            </div>
+
+            <div class="bdgs-faq-item">
+              <a class="bdgs-faq-question" data-toggle="collapse" href="#faq3"
+                >How do verified reviews work?
+                <span class="pull-right"><i class="fa fa-plus"></i></span
+              ></a>
+              <div id="faq3" class="collapse bdgs-faq-answer">
+                To leave a verified review, users must verify their phone number
+                or book a table through our platform. This helps us ensure all
+                feedback is authentic.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bdgs-map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076364379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1586000412513!5m2!1sen!2sus"
+        class="bdgs-map-iframe"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
+    </div>
+
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

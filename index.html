@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Spot | BDGS-T01-MO</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="bdgs-t01-mo-style.css" />
+    <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default bdgs-t01-mo-navbar"
+      style="position: relative; z-index: 9999"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bdgs-navbar-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.html">
+            <b>Food Spot</b>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search_results.html">Explore</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog_listing.html">Food Guides</a></li>
+            <li><a href="deals.html">Deals</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html" style="font-weight: 600">Log In</a></li>
+
+            <li class="hidden-xs">
+              <div class="bdgs-t01-mo-nav-btn-container">
+                <a
+                  href="join.html"
+                  class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                >
+                  Add Restaurant
+                </a>
+              </div>
+            </li>
+
+            <li class="visible-xs">
+              <a
+                href="join.html"
+                style="
+                  font-weight: 700;
+                  color: var(--bdgs-t01-mo-primary) !important;
+                "
+              >
+                + Add Restaurant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bdgs-t01-mo-wrapper">
+      <div
+        class="bdgs-t01-mo-hero-section bdgs-animate-fade"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop');
+        "
+      >
+        <div class="bdgs-t01-mo-hero-overlay"></div>
+        <div class="container-fluid">
+          <div class="bdgs-t01-mo-hero-content">
+            <h1 class="bdgs-t01-mo-hero-title">Discover Culinary Excellence</h1>
+            <p class="bdgs-t01-mo-hero-subtitle">
+              Discover Amazing Restaurants, Chefs & Local Food in your city.
+            </p>
+            <form action="search_results.html">
+              <div class="bdgs-t01-mo-hero-search-box">
+                <div class="bdgs-t01-mo-hero-input-group">
+                  <i class="fa fa-search"></i>
+                  <input
+                    type="text"
+                    class="bdgs-t01-mo-hero-input"
+                    placeholder="Search restaurants, cuisines..."
+                  />
+                </div>
+                <div class="bdgs-t01-mo-hero-input-group">
+                  <i class="fa fa-map-marker"></i>
+                  <input
+                    type="text"
+                    class="bdgs-t01-mo-hero-input"
+                    placeholder="City or Zip Code"
+                  />
+                </div>
+                <button type="submit" class="bdgs-t01-mo-hero-btn">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container bdgs-animate-fade delay-1">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="bdgs-t01-mo-stats-box">
+              <div class="row">
+                <div class="col-sm-4">
+                  <span class="bdgs-t01-mo-stat-number">2,500+</span>
+                  <span class="bdgs-t01-mo-stat-label">Restaurants</span>
+                </div>
+                <div
+                  class="col-sm-4"
+                  style="
+                    border-left: 1px solid #eee;
+                    border-right: 1px solid #eee;
+                  "
+                >
+                  <span class="bdgs-t01-mo-stat-number">50,000+</span>
+                  <span class="bdgs-t01-mo-stat-label">Food Lovers</span>
+                </div>
+                <div class="col-sm-4">
+                  <span class="bdgs-t01-mo-stat-number">10,000+</span>
+                  <span class="bdgs-t01-mo-stat-label">Verified Reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container bdgs-animate-fade delay-2"
+        style="padding-top: 40px; padding-bottom: 60px"
+      >
+        <div class="row text-center">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="bdgs-t01-mo-section-title">Curated Collections</h2>
+            <p class="bdgs-t01-mo-section-subtitle">
+              Browse the best restaurants by cuisine and taste.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <a href="search_results.html" class="bdgs-t01-mo-collection-card">
+              <div
+                class="bdgs-t01-mo-collection-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=600&q=80');
+                "
+              ></div>
+              <div class="bdgs-t01-mo-collection-overlay">
+                <span class="bdgs-t01-mo-collection-count">142 Places</span>
+                <h3 class="bdgs-t01-mo-collection-name">Italian Cuisine</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <a href="search_results.html" class="bdgs-t01-mo-collection-card">
+              <div
+                class="bdgs-t01-mo-collection-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80');
+                "
+              ></div>
+              <div class="bdgs-t01-mo-collection-overlay">
+                <span class="bdgs-t01-mo-collection-count">89 Places</span>
+                <h3 class="bdgs-t01-mo-collection-name">Japanese & Sushi</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <a href="search_results.html" class="bdgs-t01-mo-collection-card">
+              <div
+                class="bdgs-t01-mo-collection-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80');
+                "
+              ></div>
+              <div class="bdgs-t01-mo-collection-overlay">
+                <span class="bdgs-t01-mo-collection-count">210 Places</span>
+                <h3 class="bdgs-t01-mo-collection-name">American Grill</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-12">
+            <a
+              href="search_results.html"
+              class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+              style="padding: 12px 40px; color: #fff !important"
+            >
+              View All Categories
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container bdgs-animate-fade delay-3"
+        style="padding-bottom: 60px; position: relative"
+      >
+        <div style="position: relative; margin-bottom: 30px">
+          <h2 class="bdgs-t01-mo-section-title">Featured Restaurants</h2>
+          <p class="bdgs-t01-mo-section-subtitle">
+            Top rated dining spots recommended for you.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="bdgs-t01-mo-card">
+              <div
+                class="bdgs-t01-mo-card-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-t01-mo-card-featured-badge">Featured</span>
+                <span class="bdgs-t01-mo-badge"
+                  ><i class="fa fa-star" style="color: #ffc107"></i> 4.8</span
+                >
+              </div>
+              <div class="bdgs-t01-mo-card-body">
+                <h4 class="bdgs-t01-mo-card-title">Luigi's Italian</h4>
+                <p class="bdgs-t01-mo-card-meta">
+                  <span style="color: var(--bdgs-t01-mo-primary)">$$</span>
+                  &bull; Italian &bull; NYC
+                </p>
+                <div class="bdgs-t01-mo-card-footer">
+                  <span><i class="fa fa-map-marker"></i> 1.2 mi</span>
+                  <a href="member_profile.html" style="font-weight: 700"
+                    >View Menu</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div class="bdgs-t01-mo-card">
+              <div
+                class="bdgs-t01-mo-card-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-t01-mo-card-featured-badge">Featured</span>
+                <span class="bdgs-t01-mo-badge"
+                  ><i class="fa fa-star" style="color: #ffc107"></i> 4.6</span
+                >
+              </div>
+              <div class="bdgs-t01-mo-card-body">
+                <h4 class="bdgs-t01-mo-card-title">Marco's Pizzeria</h4>
+                <p class="bdgs-t01-mo-card-meta">
+                  <span style="color: var(--bdgs-t01-mo-primary)">$</span>
+                  &bull; Pizza &bull; Brooklyn
+                </p>
+                <div class="bdgs-t01-mo-card-footer">
+                  <span><i class="fa fa-map-marker"></i> 3.5 mi</span>
+                  <a href="member_profile.html" style="font-weight: 700"
+                    >View Menu</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 hidden-sm">
+            <div class="bdgs-t01-mo-card">
+              <div
+                class="bdgs-t01-mo-card-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-t01-mo-card-featured-badge">Featured</span>
+                <span class="bdgs-t01-mo-badge"
+                  ><i class="fa fa-star" style="color: #ffc107"></i> 4.9</span
+                >
+              </div>
+              <div class="bdgs-t01-mo-card-body">
+                <h4 class="bdgs-t01-mo-card-title">Osaka Sushi Bar</h4>
+                <p class="bdgs-t01-mo-card-meta">
+                  <span style="color: var(--bdgs-t01-mo-primary)">$$$</span>
+                  &bull; Japanese &bull; Queens
+                </p>
+                <div class="bdgs-t01-mo-card-footer">
+                  <span><i class="fa fa-map-marker"></i> 5.0 mi</span>
+                  <a href="member_profile.html" style="font-weight: 700"
+                    >View Menu</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container bdgs-animate-fade delay-3"
+        style="padding-bottom: 60px"
+      >
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="bdgs-t01-mo-section-title">Upcoming Events</h2>
+          </div>
+          <div class="col-md-6 text-right hidden-xs">
+            <a
+              href="events.html"
+              class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline"
+              >View All</a
+            >
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-6">
+            <a href="events.html" style="text-decoration: none">
+              <div class="bdgs-t01-mo-event-card">
+                <div class="bdgs-t01-mo-event-date">
+                  <span class="bdgs-t01-mo-date-day">15</span>
+                  <span class="bdgs-t01-mo-date-month">Dec</span>
+                </div>
+                <div class="bdgs-t01-mo-event-body">
+                  <h4 class="bdgs-t01-mo-event-title">Wine Pairing Dinner</h4>
+                  <div class="bdgs-t01-mo-card-meta" style="margin-bottom: 0">
+                    <i class="fa fa-cutlery"></i> Luigi's Italian
+                    &nbsp;&bull;&nbsp; <i class="fa fa-user"></i> 20 Guests
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a href="events.html" style="text-decoration: none">
+              <div class="bdgs-t01-mo-event-card">
+                <div class="bdgs-t01-mo-event-date">
+                  <span class="bdgs-t01-mo-date-day">20</span>
+                  <span class="bdgs-t01-mo-date-month">Dec</span>
+                </div>
+                <div class="bdgs-t01-mo-event-body">
+                  <h4 class="bdgs-t01-mo-event-title">Fresh Pasta Class</h4>
+                  <div class="bdgs-t01-mo-card-meta" style="margin-bottom: 0">
+                    <i class="fa fa-cutlery"></i> Marco's Pizzeria
+                    &nbsp;&bull;&nbsp; <i class="fa fa-user"></i> 12 Guests
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container bdgs-animate-fade delay-3"
+        style="padding-bottom: 80px"
+      >
+        <div class="row text-center">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="bdgs-t01-mo-section-title">Latest Food Guides</h2>
+            <p class="bdgs-t01-mo-section-subtitle">
+              Discover food trends and city guides.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="bdgs-t01-mo-article-card">
+              <div
+                class="bdgs-t01-mo-article-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-t01-mo-article-tag">Guide</span>
+              </div>
+              <div class="bdgs-t01-mo-article-body">
+                <h3 class="bdgs-t01-mo-article-title">
+                  5 Best Brunch Spots in NYC
+                </h3>
+                <div class="bdgs-t01-mo-article-meta">
+                  <span>By Jessica Chen</span><span>Dec 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="bdgs-t01-mo-article-card">
+              <div
+                class="bdgs-t01-mo-article-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-t01-mo-article-tag">Trends</span>
+              </div>
+              <div class="bdgs-t01-mo-article-body">
+                <h3 class="bdgs-t01-mo-article-title">
+                  Hidden Gem Vegan Restaurants
+                </h3>
+                <div class="bdgs-t01-mo-article-meta">
+                  <span>By Sarah M.</span><span>850 Views</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 hidden-sm">
+            <div class="bdgs-t01-mo-article-card">
+              <div
+                class="bdgs-t01-mo-article-img"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80');
+                "
+              >
+                <span class="bdgs-t01-mo-article-tag">Nightlife</span>
+              </div>
+              <div class="bdgs-t01-mo-article-body">
+                <h3 class="bdgs-t01-mo-article-title">Top Wine Bars in SF</h3>
+                <div class="bdgs-t01-mo-article-meta">
+                  <span>By Mike T.</span><span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container bdgs-animate-fade delay-3"
+        style="padding-bottom: 80px"
+      >
+        <div class="row text-center">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="bdgs-t01-mo-section-title">What Foodies Say</h2>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4">
+            <div class="bdgs-t01-mo-testimonial-card">
+              <i class="fa fa-quote-left bdgs-t01-mo-quote-icon"></i>
+              <p class="bdgs-t01-mo-testimonial-text">
+                "This directory SAVED me! I was visiting NYC and didn't know
+                where to eat. Found amazing restaurants and made reservations
+                with one click."
+              </p>
+              <div class="bdgs-t01-mo-user-info">
+                <img
+                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  class="bdgs-t01-mo-user-avatar"
+                />
+                <div>
+                  <strong>Sarah M.</strong><br />
+                  <span class="text-muted" style="font-size: 12px"
+                    >New York, NY</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-t01-mo-testimonial-card">
+              <i class="fa fa-quote-left bdgs-t01-mo-quote-icon"></i>
+              <p class="bdgs-t01-mo-testimonial-text">
+                "The reviews are SO helpful and honest. I can actually trust
+                what other diners say. Plus, the filter by dietary restrictions
+                is a lifesaver!"
+              </p>
+              <div class="bdgs-t01-mo-user-info">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  class="bdgs-t01-mo-user-avatar"
+                />
+                <div>
+                  <strong>Mike J.</strong><br />
+                  <span class="text-muted" style="font-size: 12px"
+                    >Los Angeles, CA</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bdgs-t01-mo-testimonial-card">
+              <i class="fa fa-quote-left bdgs-t01-mo-quote-icon"></i>
+              <p class="bdgs-t01-mo-testimonial-text">
+                "I've discovered so many hidden gems through this site. The food
+                guides are incredibly well-written. Highly recommend!"
+              </p>
+              <div class="bdgs-t01-mo-user-info">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  class="bdgs-t01-mo-user-avatar"
+                />
+                <div>
+                  <strong>Lisa K.</strong><br />
+                  <span class="text-muted" style="font-size: 12px"
+                    >San Francisco, CA</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bdgs-footer-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a href="#" class="bdgs-footer-brand">Food Spot.</a>
+            <p class="bdgs-footer-desc">
+              The world's most trusted restaurant directory. We connect food
+              lovers with the best culinary experiences, curated by verified
+              locals.
+            </p>
+            <div style="margin-bottom: 30px">
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a href="#" class="bdgs-social-circle"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Discover</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="search_results.html">Restaurants</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="blog_listing.html">Food Guides</a></li>
+              <li><a href="join.html">Add Restaurant</a></li>
+              <li><a href="blog_listing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 col-xs-6">
+            <h5 class="bdgs-footer-heading">Company</h5>
+            <ul class="bdgs-footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="how_it_works.html">How It Works</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="get_match.html">Get Matched</a></li>
+              <li><a href="faq.html">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="bdgs-footer-heading">Get The App</h5>
+            <p style="font-size: 13px; margin-bottom: 15px">
+              Download our app for exclusive deals.
+            </p>
+
+            <div class="bdgs-app-badges">
+              <a
+                href="https://www.apple.com/in/app-store/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-apple"></i>
+                <div class="bdgs-app-text">
+                  Download on the<span>App Store</span>
+                </div>
+              </a>
+              <a
+                href="https://play.google.com/store/apps/"
+                class="bdgs-app-btn"
+                target="_blank"
+              >
+                <i class="fa fa-android"></i>
+                <div class="bdgs-app-text">
+                  Get it on<span>Google Play</span>
+                </div>
+              </a>
+            </div>
+
+            <div style="margin-top: 30px">
+              <h5 class="bdgs-footer-heading">Newsletter</h5>
+              <div class="bdgs-footer-input-group">
+                <input
+                  type="text"
+                  class="bdgs-footer-input"
+                  placeholder="Your email address"
+                />
+                <button class="bdgs-footer-btn">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bdgs-footer-bottom">
+          <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
+          <div>
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              style="color: #777; text-decoration: none; margin-left: 15px"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
