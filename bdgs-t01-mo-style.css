@@ -471,6 +471,7 @@ a.bdgs-t01-mo-btn-primary:hover {
    ========================================= */
 .bdgs-t01-mo-article-card,
 .bdgs-t01-mo-event-card {
+  min-height: 400px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -489,7 +490,9 @@ a.bdgs-t01-mo-btn-primary:hover {
   min-height: 240px;
   height: auto;
   background-size: cover;
+  background-position: center;
   position: relative;
+  object-position: center;
 }
 .bdgs-t01-mo-article-tag {
   position: absolute;
@@ -504,6 +507,7 @@ a.bdgs-t01-mo-btn-primary:hover {
   text-transform: uppercase;
 }
 .bdgs-t01-mo-article-body {
+  height: 25vh;
   padding: 25px;
 }
 .bdgs-t01-mo-article-title {
@@ -566,6 +570,7 @@ a.bdgs-t01-mo-btn-primary:hover {
   border: 1px solid #f0f0f0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
   height: 100%;
+  margin-bottom: 20px;
 }
 .bdgs-t01-mo-quote-icon {
   font-size: 24px;
@@ -606,7 +611,52 @@ a.bdgs-t01-mo-btn-primary:hover {
   color: #888;
   margin-bottom: 40px;
 }
+.bdgs-t01-mo-section-gap {
+  margin-bottom: 30px;
+}
+.bdgs-t01-mo-section-bg-orange {
+  background-color: var(--bdgs-t01-mo-primary);
+  color: #fff;
+}
+/* ============================
+   ORANGE PAGINATION STYLES
+   ============================ */
 
+/* The Active Page (Orange Background) */
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  z-index: 3;
+  color: #fff !important;
+  background-color: var(--bdgs-t01-mo-primary) !important; /* ORANGE COLOR */
+  border-color: var(--bdgs-t01-mo-primary) !important;
+  cursor: default;
+}
+
+/* Hover State for non-active links (Orange Text) */
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  z-index: 2;
+  color: #e67e22 !important; /* Orange Text */
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+/* Default Link Color */
+.pagination > li > a,
+.pagination > li > span {
+  color: #555; /* Dark Grey */
+}
+.bdgs-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bdgs-flex-grid div {
+  flex: 1 1 300px;
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="bdgs-t01-mo-footer.css" />
 
     <style>
-      /* Event Specific Polish */
+      /* --- Event Tags --- */
       .bdgs-event-tag {
         font-size: 10px;
         text-transform: uppercase;
@@ -44,6 +44,52 @@
         background-color: #f8d7da;
         color: #721c24;
       }
+
+      /* --- Responsive Tweaks --- */
+
+      /* Mobile Layout Adjustments */
+      @media (max-width: 1097px) {
+        /* 1. Sidebar handling */
+        .bdgs-t01-mo-sidebar-box {
+          display: none; /* Hidden by default on mobile */
+          margin-bottom: 30px;
+        }
+        #mobile-filter-btn {
+          display: block !important;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        /* 2. Hero Height Adjustment */
+        .bdgs-event-hero {
+          padding: 40px 0 !important;
+        }
+        .bdgs-event-hero h1 {
+          font-size: 28px !important;
+        }
+
+        /* 3. Event Card Stacking */
+        .bdgs-t01-mo-event-body .row > div {
+          text-align: left !important; /* Reset right alignment for mobile */
+          margin-bottom: 10px;
+        }
+        .bdgs-t01-mo-event-body .text-right {
+          align-items: flex-start !important; /* Align flex items to start */
+          margin-top: 15px;
+          border-top: 1px dashed #eee;
+          padding-top: 15px;
+        }
+        /* Ensure button is full width on mobile for easier tapping */
+        .bdgs-t01-mo-event-body .btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      /* Desktop: Hide Mobile Filter Button */
+      #mobile-filter-btn {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -60,16 +106,11 @@
             data-target="#bdgs-navbar-collapse"
           >
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="icon-bar"></span><span class="icon-bar"></span
+            ><span class="icon-bar"></span>
           </button>
-
-          <a class="navbar-brand" href="index.html">
-            <b>Food Spot</b>
-          </a>
+          <a class="navbar-brand" href="index.html"><b>Food Spot</b></a>
         </div>
-
         <div class="collapse navbar-collapse" id="bdgs-navbar-collapse">
           <ul class="nav navbar-nav navbar-left" style="margin-left: 20px">
             <li><a href="index.html">Home</a></li>
@@ -84,21 +125,17 @@
             <li><a href="blog_listing.html">Food Guides</a></li>
             <li><a href="deals.html">Deals</a></li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
             <li><a href="login.html" style="font-weight: 600">Log In</a></li>
-
             <li class="hidden-xs">
               <div class="bdgs-t01-mo-nav-btn-container">
                 <a
                   href="join.html"
                   class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary"
+                  >Add Restaurant</a
                 >
-                  Add Restaurant
-                </a>
               </div>
             </li>
-
             <li class="visible-xs">
               <a
                 href="join.html"
@@ -106,9 +143,8 @@
                   font-weight: 700;
                   color: var(--bdgs-t01-mo-primary) !important;
                 "
+                >+ Add Restaurant</a
               >
-                + Add Restaurant
-              </a>
             </li>
           </ul>
         </div>
@@ -117,6 +153,7 @@
 
     <div class="bdgs-t01-mo-wrapper">
       <div
+        class="bdgs-event-hero bdgs-animate-fade"
         style="
           background: #2c3e50;
           padding: 60px 0;
@@ -124,7 +161,6 @@
           position: relative;
           overflow: hidden;
         "
-        class="bdgs-animate-fade"
       >
         <div
           style="
@@ -144,7 +180,6 @@
             opacity: 0.6;
           "
         ></div>
-
         <div class="container" style="position: relative; z-index: 2">
           <h1 style="color: #fff; margin: 0; font-size: 38px; font-weight: 800">
             Experiences & Events
@@ -165,8 +200,19 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-3 bdgs-animate-fade delay-1">
-            <div class="bdgs-t01-mo-sidebar-box">
+          <div class="col-md-3">
+            <button
+              id="mobile-filter-btn"
+              class="bdgs-t01-mo-btn bdgs-t01-mo-btn-outline"
+              onclick="toggleFilters()"
+            >
+              <i class="fa fa-sliders"></i> Filter Events
+            </button>
+
+            <div
+              class="bdgs-t01-mo-sidebar-box bdgs-animate-fade delay-1"
+              id="filter-sidebar"
+            >
               <h4 style="margin-top: 0; margin-bottom: 20px; font-weight: 800">
                 Find Events
               </h4>
@@ -294,7 +340,6 @@
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
-                      align-items: flex-end;
                     "
                   >
                     <h3
@@ -355,7 +400,6 @@
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
-                      align-items: flex-end;
                     "
                   >
                     <h3
@@ -412,7 +456,6 @@
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
-                      align-items: flex-end;
                     "
                   >
                     <h3
@@ -470,7 +513,6 @@
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
-                      align-items: flex-end;
                     "
                   >
                     <h3
@@ -481,63 +523,6 @@
                       "
                     >
                       $55
-                    </h3>
-                    <a
-                      href="event_details.html"
-                      class="bdgs-t01-mo-btn bdgs-t01-mo-btn-primary btn-sm"
-                      >Reserve Spot</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="bdgs-t01-mo-event-card bdgs-animate-fade"
-              style="animation-delay: 0.5s"
-            >
-              <div class="bdgs-t01-mo-event-date">
-                <span class="bdgs-t01-mo-date-month">Dec</span>
-                <span class="bdgs-t01-mo-date-day">28</span>
-                <span style="font-size: 11px; color: #999; margin-top: 5px"
-                  >5:00 PM</span
-                >
-              </div>
-              <div class="bdgs-t01-mo-event-body">
-                <div class="row">
-                  <div class="col-md-8 col-sm-8">
-                    <h4 class="bdgs-t01-mo-event-title" style="margin-top: 5px">
-                      Mixology 101: Holiday Cocktails
-                    </h4>
-                    <p
-                      class="text-muted"
-                      style="font-size: 13px; margin-bottom: 10px"
-                    >
-                      Learn to shake, stir, and garnish 3 signature holiday
-                      cocktails with our head bartender.
-                    </p>
-                    <div class="bdgs-t01-mo-card-meta">
-                      <i class="fa fa-map-marker"></i> The Blue Lounge
-                      &nbsp;&bull;&nbsp; <i class="fa fa-user"></i> 15 Guests
-                    </div>
-                  </div>
-                  <div
-                    class="col-md-4 col-sm-4 text-right"
-                    style="
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: flex-end;
-                    "
-                  >
-                    <h3
-                      style="
-                        color: var(--bdgs-t01-mo-primary);
-                        margin: 0 0 10px;
-                        font-weight: 800;
-                      "
-                    >
-                      $45
                     </h3>
                     <a
                       href="event_details.html"
@@ -590,7 +575,6 @@
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
-                      align-items: flex-end;
                     "
                   >
                     <h3 style="color: #999; margin: 0 0 10px; font-weight: 800">
@@ -616,7 +600,6 @@
                 <li class="disabled"><a href="#">&laquo;</a></li>
                 <li class="active"><a href="#">1</a></li>
                 <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
                 <li><a href="#">&raquo;</a></li>
               </ul>
             </div>
@@ -624,6 +607,7 @@
         </div>
       </div>
     </div>
+
     <footer class="bdgs-footer-light">
       <div class="container">
         <div class="row">
@@ -631,114 +615,43 @@
             <a href="#" class="bdgs-footer-brand">Food Spot.</a>
             <p class="bdgs-footer-desc">
               The world's most trusted restaurant directory. We connect food
-              lovers with the best culinary experiences, curated by verified
-              locals.
+              lovers with the best culinary experiences.
             </p>
-            <div style="margin-bottom: 30px">
-              <a href="#" class="bdgs-social-circle"
-                ><i class="fa fa-facebook"></i
-              ></a>
-              <a href="#" class="bdgs-social-circle"
-                ><i class="fa fa-twitter"></i
-              ></a>
-              <a href="#" class="bdgs-social-circle"
-                ><i class="fa fa-instagram"></i
-              ></a>
-              <a href="#" class="bdgs-social-circle"
-                ><i class="fa fa-linkedin"></i
-              ></a>
-            </div>
           </div>
-
-          <div class="col-md-2 col-xs-6">
+          <div class="col-md-4">
             <h5 class="bdgs-footer-heading">Discover</h5>
             <ul class="bdgs-footer-links">
               <li><a href="search_results.html">Restaurants</a></li>
               <li><a href="events.html">Events</a></li>
-              <li><a href="blog_listing.html">Food Guides</a></li>
-              <li><a href="join.html">Add Restaurant</a></li>
-              <li><a href="blog_listing.html">Blog</a></li>
+              <li><a href="deals.html">Deals</a></li>
             </ul>
           </div>
-
-          <div class="col-md-2 col-xs-6">
+          <div class="col-md-4">
             <h5 class="bdgs-footer-heading">Company</h5>
             <ul class="bdgs-footer-links">
               <li><a href="about.html">About Us</a></li>
-              <li><a href="how_it_works.html">How It Works</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="get_match.html">Get Matched</a></li>
-              <li><a href="faq.html">FAQ's</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-
-          <div class="col-md-4">
-            <h5 class="bdgs-footer-heading">Get The App</h5>
-            <p style="font-size: 13px; margin-bottom: 15px">
-              Download our app for exclusive deals.
-            </p>
-
-            <div class="bdgs-app-badges">
-              <a
-                href="https://www.apple.com/in/app-store/"
-                class="bdgs-app-btn"
-                target="_blank"
-              >
-                <i class="fa fa-apple"></i>
-                <div class="bdgs-app-text">
-                  Download on the<span>App Store</span>
-                </div>
-              </a>
-              <a
-                href="https://play.google.com/store/apps/"
-                class="bdgs-app-btn"
-                target="_blank"
-              >
-                <i class="fa fa-android"></i>
-                <div class="bdgs-app-text">
-                  Get it on<span>Google Play</span>
-                </div>
-              </a>
-            </div>
-
-            <div style="margin-top: 30px">
-              <h5 class="bdgs-footer-heading">Newsletter</h5>
-              <div class="bdgs-footer-input-group">
-                <input
-                  type="text"
-                  class="bdgs-footer-input"
-                  placeholder="Your email address"
-                />
-                <button class="bdgs-footer-btn">Subscribe</button>
-              </div>
-            </div>
-          </div>
         </div>
-
         <div class="bdgs-footer-bottom">
           <div>&copy; 2025 Food Spot Inc. All rights reserved.</div>
-          <div>
-            <a
-              href="#"
-              style="color: #777; text-decoration: none; margin-left: 15px"
-              >Privacy Policy</a
-            >
-            <a
-              href="#"
-              style="color: #777; text-decoration: none; margin-left: 15px"
-              >Terms of Service</a
-            >
-            <a
-              href="#"
-              style="color: #777; text-decoration: none; margin-left: 15px"
-              >Cookies</a
-            >
-          </div>
         </div>
       </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+      function toggleFilters() {
+        var filterBox = document.getElementById("filter-sidebar");
+        if (filterBox.style.display === "block") {
+          filterBox.style.display = "none";
+        } else {
+          filterBox.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
